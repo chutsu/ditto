@@ -1,0 +1,8 @@
+*.pyc
+
+build/
+dist/
+
+*.egg*
+.rope*
+run.sh
