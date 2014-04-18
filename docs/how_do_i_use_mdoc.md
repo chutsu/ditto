@@ -18,7 +18,8 @@ something like this:
     docs/  # insert markdown files here!
 
 ## index.html
-[Download][index_file] or copy the following code snippet and save it as `index.html`
+[Download][index_file](<- right-click "Save as") or copy the following code
+snippet and save it as `index.html`
 
     <!DOCTYPE html>
     <html>
@@ -48,11 +49,11 @@ something like this:
         <!-- custom script -->
         <script>
             // essential settings
-            mdoc.index = "README.md",
-            mdoc.sidebar_file = "sidebar.md",
+            mdoc.index = "README.md";
+            mdoc.sidebar_file = "sidebar.md";
 
             // where the docs are actually stored on github - so you can edit
-            mdoc.base_url = "https://github.com/chutsu/mdoc/tree/gh-pages";
+            mdoc.base_url = ""; <!----------- EDIT THIS LINE! --------------->
 
             // run
             mdoc.run();
@@ -70,7 +71,8 @@ In the `sidebar.md` file you can create links to documentation you wish to list
     #folder_containing_docs/file_name_without_extension
 
 
-    // FOR EXAMPLE
+For example:
+
     - [Documentation 1](#docs/document_1)
     - [Documentation 2](#docs/document_2)
     - [Documentation 3](#docs/document_3)
