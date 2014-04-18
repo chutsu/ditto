@@ -74,7 +74,7 @@ body {
 }
 
 #content {
-    width: 620px;
+    width: 580px;
 
     margin-left: 300px;
     padding-top: 10px;
@@ -87,27 +87,26 @@ body {
 }
 
 #content pre {
-    width: 95%;
-
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 13px;
+
+    color: #FFF;
+
+    background: #444;
+    border-radius: 5px;
+}
+
+#content code {
+    padding-left: 5px;
+    padding-right: 5px;
 
     color: #FFF;
     font-size: 10px;
     font-weight: normal;
     font-family: Consolas, monospace;
-
-    background: #444;
-    border-radius: 10px;
-}
-
-#content code {
-    padding-left: 3px;
-    padding-right: 3px;
-
-    color: #FFF;
-    font-size: 12px;
 
     background: #444;
     border-radius: 2px;
