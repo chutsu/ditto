@@ -53,6 +53,7 @@ snippet and save it as `index.html`
             mdoc.sidebar_file = "sidebar.md";
 
             // where the docs are actually stored on github - so you can edit
+            // e.g. https://github.com/chutsu/mdoc/edit/gh-pages/
             mdoc.base_url = ""; <!----------- EDIT THIS LINE! --------------->
 
             // run
