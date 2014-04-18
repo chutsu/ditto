@@ -85,4 +85,4 @@ Do I really have to tell you what to put in here?
 
 
 
-[index_file]: http://github.com/chutsu/mdoc/ver/0.1/index.html
+[index_file]: http://raw.githubusercontent.com/chutsu/mdoc/master/ver/0.1/index.html
