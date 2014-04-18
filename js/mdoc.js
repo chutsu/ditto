@@ -128,6 +128,24 @@ function create_page_anchors() {
     }
 }
 
+function derelativize_paths() {
+    // images
+    $(mdoc.content_id + " img").map(function() {
+        var src = $(this).attr("src").replace("./", "");
+        if ($(this).attr("src").slice(0, 5) !== "http") {
+            var url = location.hash.replace("#", "");
+
+            // split and extract base dir
+            url = url.split("/");
+            var base_dir = url.slice(0, url.length - 1).toString();
+
+            // derelativize the path (i.e. make it absolute)
+            $(this).attr("src", base_dir + "/" + src);
+        }
+    });
+
+}
+
 function show_error() {
     console.log("SHOW ERORR!");
     $(mdoc.error_id).show();
@@ -162,11 +180,16 @@ function router() {
     $.get(path , function(data) {
         $(mdoc.error_id).hide();
         $(mdoc.content_id).html(marked(data));
+
+        derelativize_paths();
         create_page_anchors();
+
     }).fail(function() {
         show_error();
+
     }).always(function() {
         clearInterval(loading);
         $(mdoc.loading_id).hide();
+
     });
 }

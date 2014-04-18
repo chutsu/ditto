@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>playground</title>
-    <!-- LiveReload -->
-    <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
-
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
     <!-- marked -->
-    <script src="./js/marked.js"></script>
+    <script src="http://chutsu.github.io/mdoc/ver/0.1/marked.js"></script>
 
     <!-- mdoc -->
-    <script src="./js/mdoc.js"></script>
-    <link rel="stylesheet" href="./css/mdoc.css">
+    <script src="http://chutsu.github.io/mdoc/ver/0.1/mdoc.js"></script>
+    <link rel="stylesheet" href="http://chutsu.github.io/mdoc/ver/0.1/mdoc.css">
 </head>
 <body>
     <!-- essential -->
@@ -33,7 +29,7 @@
         mdoc.sidebar_file = "sidebar.md",
 
         // where the docs are actually stored on github - so you can edit
-        mdoc.base_url = "https://github.com/chutsu/mdoc/tree/gh-pages";
+        mdoc.base_url = "";  // <------- EDIT ME!!
 
         // run
         mdoc.run();

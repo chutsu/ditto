@@ -67,7 +67,10 @@ Edit `mdoc.index`, `mdoc.sidebar_file` and `mdoc.base_url` as you see fit.
 In the `sidebar.md` file you can create links to documentation you wish to list
 (just as you would in markdown). You have to list them in the form:
 
+    #folder_containing_docs/file_name_without_extension
 
+
+    // FOR EXAMPLE
     - [Documentation 1](#docs/document_1)
     - [Documentation 2](#docs/document_2)
     - [Documentation 3](#docs/document_3)

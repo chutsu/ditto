@@ -12,6 +12,11 @@ use cases (it only consists of html, css, and javascript after all).
 
 ## Features
 
+- Automatic creation of page anchors (creation of links within the page)
+- Scroll to section
+- Edit button to Github pages
+- Scroll back to top button
+
 ### LICENSE
 
 The MIT License (MIT)
