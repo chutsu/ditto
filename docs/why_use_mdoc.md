@@ -179,8 +179,8 @@ Would you not want to refactor the above code and work with this?:
 
 And to conclude this is the reason why I've created `mdoc`, I think markdown
 files are the easiest way to have both the source and documentation side by
-side, so that programmers can generate documentation without having the code
-peppered with excess comments.
+side, so that programmers can either focus on code or generate documentation 
+without being slowed down.
 
 
 [1]: http://blog.codinghorror.com/coding-without-comments/
