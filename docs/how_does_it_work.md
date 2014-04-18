@@ -18,7 +18,8 @@ Documentation defined in `sidebar.md` should be of the form:
     #folder_containing_docs/file_name_without_extension
 
 
-    // FOR EXAMPLE
+For example:
+
     - [Documentation 1](#docs/document_1)
     - [Documentation 2](#docs/document_2)
     - [Documentation 3](#docs/document_3)
