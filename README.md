@@ -10,6 +10,8 @@ use cases (it only consists of html, css, and javascript after all).
 - Can fetch more than just the README file
 - Just create an HTML file, create some markdown files and deploy! :)
 
+Live Demo [**here**](http://chutsu.github.io/mdoc)
+
 ## Features
 
 - Automatic creation of page anchors (creation of links within the page)
