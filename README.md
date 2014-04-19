@@ -13,15 +13,10 @@ use cases (it only consists of html, css, and javascript after all).
 Live Demo [**here**](http://chutsu.github.io/mdoc)
 
 ## Features
+- Auto-generation of Page Anchors
+- Edit button to Github pages
+- Scroll back to top button
 
-### Auto-generation of Page Anchors
-![page anchors gif](images/mdoc_page_anchor.gif)
-
-### Edit button to Github pages
-![edit gif](images/mdoc_edit.gif)
-
-### Scroll back to top button
-![back to top gif](images/mdoc_back_to_top.gif)
 
 ### LICENSE
 
