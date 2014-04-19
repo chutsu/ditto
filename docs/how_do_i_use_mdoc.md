@@ -11,13 +11,17 @@ Contents:
 `mdoc` expects the file structure of your documentation website to look
 something like this:
 
-
     index.html
     sidebar.md
     README.md
     docs/  # insert markdown files here!
 
 ## index.html
+**NOTE**: Before you create the `index.html` file, please know that `mdoc`
+requires a http server for the documentation to be pulled down. If you're using
+`gh-pages` in your github, just push this `index.html` along with other files
+discussed in section `File Structure` to github to host your files.
+
 [Download][index_file](<- right-click "Save as") or copy the following code
 snippet and save it as `index.html`
 
@@ -84,7 +88,7 @@ For example:
 - Also ___DO NOT___ INCLUDE THE FILE EXTENSION AT THE END!
 
 ## README.md
-Do I really have to tell you what to put in here? really? ...
+Do I really have to tell you what to put in here? 
 
 
 
