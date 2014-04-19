@@ -20,7 +20,8 @@ something like this:
 **NOTE**: Before you create the `index.html` file, please know that `mdoc`
 requires a http server for the documentation to be pulled down. If you're using
 `gh-pages` in your github, just push this `index.html` along with other files
-discussed in section `File Structure` to github to host your files.
+discussed in section `File Structure` to your `gh-pages` branch on github to
+host your files.
 
 [Download][index_file](<- right-click "Save as") or copy the following code
 snippet and save it as `index.html`
