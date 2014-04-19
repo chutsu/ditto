@@ -128,7 +128,7 @@ function create_page_anchors() {
     }
 }
 
-function derelativize_paths() {
+function normalize_paths() {
     // images
     $(mdoc.content_id + " img").map(function() {
         var src = $(this).attr("src").replace("./", "");
@@ -139,7 +139,7 @@ function derelativize_paths() {
             url = url.split("/");
             var base_dir = url.slice(0, url.length - 1).toString();
 
-            // derelativize the path (i.e. make it absolute)
+            // normalize the path (i.e. make it absolute)
             $(this).attr("src", base_dir + "/" + src);
         }
     });
@@ -169,8 +169,10 @@ function router() {
     // default page if hash is empty
     if (location.pathname === "/index.html") {
         path = location.pathname.replace("index.html", mdoc.index);
+        normalize_paths();
     } else if (path === "") {
         path = window.location + mdoc.index;
+        normalize_paths();
     } else {
         path = path + ".md";
     }
@@ -181,7 +183,7 @@ function router() {
         $(mdoc.error_id).hide();
         $(mdoc.content_id).html(marked(data));
 
-        derelativize_paths();
+        normalize_paths();
         create_page_anchors();
 
     }).fail(function() {
