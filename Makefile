@@ -1,6 +1,6 @@
 default:
 	@echo "targets:"
-	@echo "  - version: make a new mdoc version"
+	@echo "  - version: make a new ditto version"
 	@echo "  - run_server: run local http server"
 
 version:

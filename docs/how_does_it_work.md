@@ -6,7 +6,7 @@
 - Other
 
 ## General
-When you open the `index.html` file, the javascript file `mdoc.js` opens
+When you open the `index.html` file, the javascript file `ditto.js` opens
 `sidebar.md` and `README.md` files converts the file using
 [marked][marked_github] and displays the rendered html (unless defined
 differently by you otherwise).
@@ -37,7 +37,7 @@ and uses `marked` up to render the file and display it in `#content`.
 
 
 ## Other
-`mdoc` also performs other magick as well, such as :
+`ditto` also performs other magick as well, such as :
 
 - Normalizing paths
 - Creating page anchors automatically
@@ -53,7 +53,7 @@ write this in markdown:
 However that doesn't work without magick, because the server root is `/` and it would look for
 `images/image_1.jpg`, which is the wrong place.
 
-To fix that issue, `mdoc` simply gathers the `window.location` and
+To fix that issue, `ditto` simply gathers the `window.location` and
 `window.location.hash`, does some path normalizing, and performs a search and
 replace on the page to fix that issue.
 

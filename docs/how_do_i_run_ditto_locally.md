@@ -1,7 +1,7 @@
-# How do I run mdoc locally?
+# How do I run ditto locally?
 
-`mdoc` requires a http server in-order to send GET requests to pull the markdown
-files. There are many ways to run mdoc locally, perhaps the easiest is to use
+`ditto` requires a http server in-order to send GET requests to pull the markdown
+files. There are many ways to run ditto locally, perhaps the easiest is to use
 Python's `SimpleHTTPServer` like so:
 
     cd <dir where index.html and docs/ reside>

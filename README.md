@@ -1,5 +1,5 @@
-# mdoc
-mdoc inspired by [flatdoc](http://ricostacruz.com/flatdoc/) is a markdown code
+# ditto
+`ditto` inspired by [flatdoc](http://ricostacruz.com/flatdoc/) is a markdown code
 documentation system, capable of producing documentation similar to
 [Three.js][1] and [Backbone.js][2]. It is designed for people who use Github
 Pages to host their code documentation, but it can easily be adapted for other
@@ -10,7 +10,7 @@ use cases (it only consists of html, css, and javascript after all).
 - Can fetch more than just the README file
 - Just create an HTML file, create some markdown files and deploy! :)
 
-Live Demo [**here**](http://chutsu.github.io/mdoc)
+Live Demo [**here**](http://chutsu.github.io/ditto)
 
 ## Features
 - Auto-generation of Page Anchors

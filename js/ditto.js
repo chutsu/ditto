@@ -1,4 +1,4 @@
-var mdoc = {
+var ditto = {
     // page element ids
     content_id: "#content",
     sidebar_id: "#sidebar",
@@ -18,15 +18,15 @@ var mdoc = {
 
 function initialize() {
     // initialize sidebar and buttons
-    if (mdoc.sidebar) {
+    if (ditto.sidebar) {
         init_sidebar_section();
     }
 
-    if (mdoc.back_to_top_button) {
+    if (ditto.back_to_top_button) {
         init_back_to_top_button();
     }
 
-    if (mdoc.edit_button) {
+    if (ditto.edit_button) {
         init_edit_button();
     }
 
@@ -36,8 +36,8 @@ function initialize() {
 }
 
 function init_sidebar_section() {
-    $.get(mdoc.sidebar_file, function(data) {
-        $(mdoc.sidebar_id).html(marked(data));
+    $.get(ditto.sidebar_file, function(data) {
+        $(ditto.sidebar_id).html(marked(data));
     }, "text").fail(function() {
         alert("Opps! can't find the sidebar file to display!");
     });
@@ -45,8 +45,8 @@ function init_sidebar_section() {
 }
 
 function init_back_to_top_button() {
-    $(mdoc.back_to_top_id).show();
-    $(mdoc.back_to_top_id).on("click", function() {
+    $(ditto.back_to_top_id).show();
+    $(ditto.back_to_top_id).on("click", function() {
         $("html body").animate({
             scrollTop: 0
         }, 200);
@@ -54,19 +54,19 @@ function init_back_to_top_button() {
 }
 
 function init_edit_button() {
-    if (mdoc.base_url === null) {
-        alert("Error! You didn't set 'base_url' when calling mdoc.run()!");
+    if (ditto.base_url === null) {
+        alert("Error! You didn't set 'base_url' when calling ditto.run()!");
 
     } else {
-        $(mdoc.edit_id).show();
-        $(mdoc.edit_id).on("click", function() {
+        $(ditto.edit_id).show();
+        $(ditto.edit_id).on("click", function() {
             var hash = location.hash.replace("#", "/");
 
             if (hash === "") {
-                hash = "/" + mdoc.index.replace(".md", "");
+                hash = "/" + ditto.index.replace(".md", "");
             }
 
-            window.open(mdoc.base_url + hash + ".md");
+            window.open(ditto.base_url + hash + ".md");
             // open is better than redirecting, as the previous page history
             // with redirect is a bit messed up
         });
@@ -85,10 +85,10 @@ function li_create_linkage(li_tag, header_level) {
     li_tag.attr("class", "link");
 
     // add click listener - on click scroll to relevant header section
-    $(mdoc.content_id + " li#" + li_tag.attr("id")).click(function() {
+    $(ditto.content_id + " li#" + li_tag.attr("id")).click(function() {
         // scroll to relevant section
         var header = $(
-            mdoc.content_id + " h" + header_level + "." + li_tag.attr("id")
+            ditto.content_id + " h" + header_level + "." + li_tag.attr("id")
         );
         $('html, body').animate({
             scrollTop: header.offset().top
@@ -130,7 +130,7 @@ function create_page_anchors() {
 
 function normalize_paths() {
     // images
-    $(mdoc.content_id + " img").map(function() {
+    $(ditto.content_id + " img").map(function() {
         var src = $(this).attr("src").replace("./", "");
         if ($(this).attr("src").slice(0, 5) !== "http") {
             var url = location.hash.replace("#", "");
@@ -148,16 +148,16 @@ function normalize_paths() {
 
 function show_error() {
     console.log("SHOW ERORR!");
-    $(mdoc.error_id).show();
+    $(ditto.error_id).show();
 }
 
 function show_loading() {
-    $(mdoc.loading_id).show();
-    $(mdoc.content_id).html("");  // clear content
+    $(ditto.loading_id).show();
+    $(ditto.content_id).html("");  // clear content
 
     // infinite loop until clearInterval() is called on loading
     var loading = setInterval(function() {
-        $(mdoc.loading_id).fadeIn(1000).fadeOut(1000);
+        $(ditto.loading_id).fadeIn(1000).fadeOut(1000);
     }, 2000);
 
     return loading;
@@ -168,10 +168,10 @@ function router() {
 
     // default page if hash is empty
     if (location.pathname === "/index.html") {
-        path = location.pathname.replace("index.html", mdoc.index);
+        path = location.pathname.replace("index.html", ditto.index);
         normalize_paths();
     } else if (path === "") {
-        path = window.location + mdoc.index;
+        path = window.location + ditto.index;
         normalize_paths();
     } else {
         path = path + ".md";
@@ -180,8 +180,8 @@ function router() {
     // otherwise get the markdown and render it
     var loading = show_loading();
     $.get(path , function(data) {
-        $(mdoc.error_id).hide();
-        $(mdoc.content_id).html(marked(data));
+        $(ditto.error_id).hide();
+        $(ditto.content_id).html(marked(data));
 
         normalize_paths();
         create_page_anchors();
@@ -191,7 +191,7 @@ function router() {
 
     }).always(function() {
         clearInterval(loading);
-        $(mdoc.loading_id).hide();
+        $(ditto.loading_id).hide();
 
     });
 }

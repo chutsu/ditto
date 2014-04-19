@@ -1,4 +1,4 @@
-# Why use mdoc?
+# Why use ditto?
 
 For those who are experienced programmers, we've all heard that too much
 comments is a bad thing, because your code should be simple and readable enough
@@ -177,7 +177,7 @@ Would you not want to refactor the above code and work with this?:
 
 
 
-And to conclude this is the reason why I've created `mdoc`, I think markdown
+And to conclude this is the reason why I've created `ditto`, I think markdown
 files are the easiest way to have both the source and documentation side by
 side, so that programmers can either focus on code or generate documentation 
 without being slowed down.

@@ -1,4 +1,4 @@
-# How do I use mdoc?
+# How do I use ditto?
 
 Contents:
 - File Structure
@@ -8,7 +8,7 @@ Contents:
 
 
 ## File Structure
-`mdoc` expects the file structure of your documentation website to look
+`ditto` expects the file structure of your documentation website to look
 something like this:
 
     index.html
@@ -17,7 +17,7 @@ something like this:
     docs/  # insert markdown files here!
 
 ## index.html
-**NOTE**: Before you create the `index.html` file, please know that `mdoc`
+**NOTE**: Before you create the `index.html` file, please know that `ditto`
 requires a http server for the documentation to be pulled down. If you're using
 `gh-pages` in your github, just push this `index.html` along with other files
 discussed in section `File Structure` to your `gh-pages` branch on github to
@@ -34,11 +34,11 @@ snippet and save it as `index.html`
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
         <!-- marked -->
-        <script src="http://chutsu.github.io/mdoc/ver/0.1/marked.min.js"></script>
+        <script src="http://chutsu.github.io/ditto/ver/0.1/marked.min.js"></script>
 
-        <!-- mdoc -->
-        <script src="http://chutsu.github.io/mdoc/ver/0.1/mdoc.js"></script>
-        <link href="http://chutsu.github.io/mdoc/ver/0.1/mdoc.css" rel="stylesheet">
+        <!-- ditto -->
+        <script src="http://chutsu.github.io/ditto/ver/0.1/ditto.js"></script>
+        <link href="http://chutsu.github.io/ditto/ver/0.1/ditto.css" rel="stylesheet">
     </head>
     <body>
         <!-- essential -->
@@ -54,20 +54,20 @@ snippet and save it as `index.html`
         <!-- custom script -->
         <script>
             // essential settings
-            mdoc.index = "README.md";
-            mdoc.sidebar_file = "sidebar.md";
+            ditto.index = "README.md";
+            ditto.sidebar_file = "sidebar.md";
 
             // where the docs are actually stored on github - so you can edit
-            // e.g. https://github.com/chutsu/mdoc/edit/gh-pages/
-            mdoc.base_url = ""; <!----------- EDIT THIS LINE! --------------->
+            // e.g. https://github.com/chutsu/ditto/edit/gh-pages/
+            ditto.base_url = ""; <!----------- EDIT THIS LINE! --------------->
 
             // run
-            mdoc.run();
+            ditto.run();
         </script>
     </body>
     </html>
 
-Edit `mdoc.index`, `mdoc.sidebar_file` and `mdoc.base_url` as you see fit. 
+Edit `ditto.index`, `ditto.sidebar_file` and `ditto.base_url` as you see fit. 
 
 
 ## sidebar.md
@@ -93,4 +93,4 @@ Do I really have to tell you what to put in here?
 
 
 
-[index_file]: http://raw.githubusercontent.com/chutsu/mdoc/master/ver/0.1/index.html
+[index_file]: http://raw.githubusercontent.com/chutsu/ditto/master/ver/0.1/index.html
