@@ -20,6 +20,10 @@ var ditto = {
     back_to_top_button: true,
     searchbar: true,
 
+    // github specifics
+    github_username: null,
+    github_repo: null,
+
     // initialize function
     run: initialize
 };
@@ -167,17 +171,28 @@ function display_search_results(data) {
 }
 
 function github_search(query) {
-    // build github search api url string
-    var github_api = "https://api.github.com/";
-    var search_api = "search/code?q=";
-    var search_details = "+in:file+language:markdown+repo:chutsu/ditto";
+    if (ditto.github_username && ditto.github_repo) {
+        // build github search api url string
+        var github_api = "https://api.github.com/";
+        var search = "search/code?q=";
+        var github_repo = ditto.github_username + "/" + ditto.github_repo;
+        var search_details = "+in:file+language:markdown+repo:";
 
-    var url = github_api + search_api + query + search_details;
-    var accept_header = "application/vnd.github.v3.text-match+json";
+        var url = github_api + search + query + search_details + github_repo;
+        var accept_header = "application/vnd.github.v3.text-match+json";
 
-    $.ajax(url, {headers: {Accept: accept_header}}).done(function(data) {
-        display_search_results(data);
-    });
+        $.ajax(url, {headers: {Accept: accept_header}}).done(function(data) {
+            display_search_results(data);
+        });
+    }
+
+    if (ditto.github_username == null && ditto.github_repo == null) {
+        alert("You have not set ditto.github_username and ditto.github_repo!");
+    } else if (ditto.github_username == null) {
+        alert("You have not set ditto.github_username!");
+    } else if (ditto.github_repo == null) {
+        alert("You have not set ditto.github_repo!");
+    }
 }
 
 function searchbar_listener(event) {

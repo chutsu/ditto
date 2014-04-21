@@ -250,6 +250,7 @@ body {
     margin-left: 560px;
 
     font-size: 14px;
+    font-weight: bold;
 }
 
 input[type=search] {
