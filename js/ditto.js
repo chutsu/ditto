@@ -110,8 +110,9 @@ function build_text_matches_html(fragments) {
     html += "<ul class='" + class_name + "'>";
     for (var i = 0; i < fragments.length; i++) {
         var fragment = fragments[i].fragment.replace("/[\uE000-\uF8FF]/g", "");
-        html += "<li class='" + ditto.fragment_class + "'>";
+        html += "<li class='" + ditto.fragment_class.replace(".", "") + "'>";
         html += "<pre><code> ";
+        fragment = $("#hide").text(fragment).html();
         html += fragment;
         html += " </code></pre></li>";
     }

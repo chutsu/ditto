@@ -259,7 +259,19 @@ input[type=search] {
 
 .fragments {
     margin: 0;
-    padding: 0;
+    padding: 10px;
+    /* border: 1px solid #777; */
+    /* border-radius: 5px; */
+}
+
+.fragment {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    /* border: 1px solid #777; */
+    /* border-radius: 5px; */
 }
 
 .search_results .link {
@@ -276,4 +288,8 @@ input[type=search] {
     content: "";
     margin: 0;
     padding: 0;
+}
+
+#hide {
+    display: none;
 }
