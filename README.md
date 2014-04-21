@@ -7,14 +7,14 @@ use cases (it only consists of html, css, and javascript after all).
 
 - No build process needed
 - Deployable via GitHub Pages
-- Easily customizable (does not use the bloated Twitter Bootstrap)
+- Easily customizable (No **bloated Twitter Bootstrap**)
 - Can fetch more than just the README file
 - Just create an HTML file, create some markdown files and deploy! :)
 
 Live Demo [**here**](http://chutsu.github.io/ditto)
 
 ## Features
-- NEW **Github Search**! (on your gh-pages)
+- **NEW Github Search**! (on your gh-pages)
 - Auto-generation of Page Anchors
 - Edit button to Github pages
 - Scroll back to top button
