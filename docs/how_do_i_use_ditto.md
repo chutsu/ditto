@@ -49,7 +49,7 @@ snippet and save it as `index.html`
         <div id="back_to_top">back to top</div>
         <div id="edit">edit</div>
         <div id="loading">Loading ...</div>
-        <div id="error">Opps! ... File not found!</div>
+        <div id="error"></div>
 
         <!-- custom script -->
         <script>
@@ -57,9 +57,13 @@ snippet and save it as `index.html`
             ditto.index = "README.md";
             ditto.sidebar_file = "sidebar.md";
 
+            // optional settings if you want github search
+            ditto.github_username = null;   // <-- EDIT THIS LINE! e.g. "chutsu"
+            ditto.github_repo = null;       // <-- EDIT THIS LINE! e.g. "ditto"
+
             // where the docs are actually stored on github - so you can edit
             // e.g. https://github.com/chutsu/ditto/edit/gh-pages/
-            ditto.base_url = ""; <!----------- EDIT THIS LINE! --------------->
+            ditto.base_url = "";            // <-- EDIT THIS LINE!
 
             // run
             ditto.run();
@@ -67,7 +71,14 @@ snippet and save it as `index.html`
     </body>
     </html>
 
-Edit `ditto.index`, `ditto.sidebar_file` and `ditto.base_url` as you see fit. 
+Edit:
+- `ditto.index`
+- `ditto.sidebar_file`
+- `ditto.github_username`
+- `ditto.github_repo`
+- `ditto.base_url`
+
+as you see fit.
 
 
 ## sidebar.md
@@ -76,20 +87,22 @@ In the `sidebar.md` file you can create links to documentation you wish to list
 
     #folder_containing_docs/file_name_without_extension
 
-
 For example:
 
     - [Documentation 1](#docs/document_1)
     - [Documentation 2](#docs/document_2)
     - [Documentation 3](#docs/document_3)
 
+If you want the GitHub search bar enter the following in the same file:
+
+    [ditto:searchbar]
 
 **IMPORTANT NOTE**:
 - Add `#` infront of `docs`, where `docs` is the folder where `document_1.md` resides
 - Also ___DO NOT___ INCLUDE THE FILE EXTENSION AT THE END!
 
 ## README.md
-Do I really have to tell you what to put in here? 
+Do I really have to tell you what to put in here?
 
 
 
