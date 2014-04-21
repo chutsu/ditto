@@ -286,6 +286,10 @@ input[type=search] {
     margin-top: 35px;
 }
 
+#content ul li {
+    text-align: left;
+}
+
 #content ul .fragments li:before {
     content: "";
     position: relative;
