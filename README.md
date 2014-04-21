@@ -7,7 +7,7 @@ use cases (it only consists of html, css, and javascript after all).
 
 - No build process needed
 - Deployable via GitHub Pages
-- Easily customizable (No **bloated Twitter Bootstrap**)
+- Easily customizable (**No bloated Twitter Bootstrap**)
 - Can fetch more than just the README file
 - Just create an HTML file, create some markdown files and deploy! :)
 
