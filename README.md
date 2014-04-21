@@ -14,6 +14,7 @@ use cases (it only consists of html, css, and javascript after all).
 Live Demo [**here**](http://chutsu.github.io/ditto)
 
 ## Features
+- NEW **Github Search**! (on your gh-pages)
 - Auto-generation of Page Anchors
 - Edit button to Github pages
 - Scroll back to top button
