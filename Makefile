@@ -5,6 +5,7 @@ default:
 
 version:
 	@read -p "enter new version name: " new_version; \
+	mkdir -p ver; \
 	mkdir ver/$$new_version; \
 	cp css/* ver/$$new_version; \
 	cp js/* ver/$$new_version; \

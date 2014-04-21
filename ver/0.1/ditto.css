@@ -99,6 +99,10 @@ body {
     border-radius: 5px;
 }
 
+#content pre code {
+        padding-left: 0;
+}
+
 #content code {
     padding-left: 5px;
     padding-right: 5px;
@@ -185,7 +189,7 @@ body {
     width: 70px;
     top: 20px;
 
-    margin-left: 930px;
+    margin-left: 890px;
     margin-top: 0px;
 
     color: #FFF;
@@ -211,7 +215,7 @@ body {
     width: 70px;
     top: 45px;
 
-    margin-left: 930px;
+    margin-left: 890px;
     margin-top: 0px;
 
     color: #FFF;
@@ -239,4 +243,53 @@ body {
     margin-left: 560px;
 
     font-size: 14px;
+}
+
+input[type=search] {
+    display: block;
+    width: 180px;
+
+    text-align: left;
+}
+
+.search_results{
+
+
+}
+
+.fragments {
+    margin: 0;
+    padding: 10px;
+    /* border: 1px solid #777; */
+    /* border-radius: 5px; */
+}
+
+.fragment {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    /* border: 1px solid #777; */
+    /* border-radius: 5px; */
+}
+
+.search_results .link {
+    margin-top: 35px;
+}
+
+#content ul .fragments li:before {
+    content: "";
+    position: relative;
+    left: 0px;
+}
+
+#content ul li.fragment:before {
+    content: "";
+    margin: 0;
+    padding: 0;
+}
+
+#hide {
+    display: none;
 }

@@ -150,9 +150,15 @@ function build_result_matches_html(matches) {
 }
 
 function display_search_results(data) {
-    var results_html = "";
-    results_html += "<h1>Search Results</h1>";
-    results_html += build_result_matches_html(data.items);
+    var results_html = "<h1>Search Results</h1>";
+
+    if (data.items.length) {
+        $(ditto.error_id).hide();
+        results_html += build_result_matches_html(data.items);
+    } else {
+        show_error("Opps.. Found no matches!");
+    }
+
     $(ditto.content_id).html(results_html);
     $(ditto.search_results_class + " .link").click(function(){
         var destination = "#" + $(this).html().replace(".md", "");
@@ -177,7 +183,11 @@ function github_search(query) {
 function searchbar_listener(event) {
     if (event.which === 13) {  // when user presses ENTER in search bar
         var q = $("input[name=" + ditto.search_name + "]").val();
-        location.hash = "#search=" + q;
+        if (q !== "") {
+            location.hash = "#search=" + q;
+        } else {
+            alert("Error! Empty search query!");
+        }
     }
 }
 
@@ -254,8 +264,8 @@ function normalize_paths() {
 
 }
 
-function show_error() {
-    console.log("SHOW ERORR!");
+function show_error(err_msg) {
+    $(ditto.error_id).html(err_msg);
     $(ditto.error_id).show();
 }
 
@@ -296,7 +306,7 @@ function page_getter() {
         create_page_anchors();
 
     }).fail(function() {
-        show_error();
+        show_error("Opps! ... File not found!");
 
     }).always(function() {
         clearInterval(loading);

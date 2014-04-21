@@ -1,16 +1,24 @@
 var ditto = {
-    // page element ids
+    // page elements
     content_id: "#content",
     sidebar_id: "#sidebar",
+
     edit_id: "#edit",
     back_to_top_id: "#back_to_top",
+
     loading_id: "#loading",
     error_id: "#error",
+
+    search_name: "#search",
+    search_results_class: ".search_results",
+    fragments_class: ".fragments",
+    fragment_class: ".fragment",
 
     // display elements
     sidebar: true,
     edit_button: true,
     back_to_top_button: true,
+    searchbar: true,
 
     // initialize function
     run: initialize
@@ -38,6 +46,11 @@ function initialize() {
 function init_sidebar_section() {
     $.get(ditto.sidebar_file, function(data) {
         $(ditto.sidebar_id).html(marked(data));
+
+        if (ditto.searchbar) {
+            init_searchbar();
+        }
+
     }, "text").fail(function() {
         alert("Opps! can't find the sidebar file to display!");
     });
@@ -70,6 +83,111 @@ function init_edit_button() {
             // open is better than redirecting, as the previous page history
             // with redirect is a bit messed up
         });
+    }
+}
+
+function init_searchbar() {
+    var sidebar = $(ditto.sidebar_id).html();
+    var match = "[ditto:searchbar]";
+
+    // html input searchbar
+    var search = "<input name='" + ditto.search_name + "'";
+    search = search + " type='search'";
+    search = search + " results='10'>";
+
+    // replace match code with a real html input search bar
+    sidebar = sidebar.replace(match, search);
+    $(ditto.sidebar_id).html(sidebar);
+
+    // add search listener
+    $("input[name=" + ditto.search_name + "]").keydown(searchbar_listener);
+}
+
+function build_text_matches_html(fragments) {
+    var html = "";
+    var class_name = ditto.fragments_class.replace(".", "");
+
+    html += "<ul class='" + class_name + "'>";
+    for (var i = 0; i < fragments.length; i++) {
+        var fragment = fragments[i].fragment.replace("/[\uE000-\uF8FF]/g", "");
+        html += "<li class='" + ditto.fragment_class.replace(".", "") + "'>";
+        html += "<pre><code> ";
+        fragment = $("#hide").text(fragment).html();
+        html += fragment;
+        html += " </code></pre></li>";
+    }
+    html += "</ul>";
+
+    return html;
+}
+
+function build_result_matches_html(matches) {
+    var html = "";
+    var class_name = ditto.search_results_class.replace(".", "");
+
+    html += "<ul class='" + class_name + "'>";
+    for (var i = 0; i < matches.length; i++) {
+        var url = matches[i].path;
+
+        if (url !== ditto.sidebar_file) {
+            var hash = "#" + url.replace(".md", "");
+            var path = window.location.origin+ "/" + hash;
+
+            // html += "<li>";
+            html += "<li class='link'>";
+            html += url;
+            // html += "<a href='" + path +"'>" + url + "</a>";
+            html += "</li>";
+
+            var match = build_text_matches_html(matches[i].text_matches);
+            html += match;
+        }
+
+    }
+    html += "</ul>";
+
+    return html;
+}
+
+function display_search_results(data) {
+    var results_html = "<h1>Search Results</h1>";
+
+    if (data.items.length) {
+        $(ditto.error_id).hide();
+        results_html += build_result_matches_html(data.items);
+    } else {
+        show_error("Opps.. Found no matches!");
+    }
+
+    $(ditto.content_id).html(results_html);
+    $(ditto.search_results_class + " .link").click(function(){
+        var destination = "#" + $(this).html().replace(".md", "");
+        location.hash = destination;
+    });
+}
+
+function github_search(query) {
+    // build github search api url string
+    var github_api = "https://api.github.com/";
+    var search_api = "search/code?q=";
+    var search_details = "+in:file+language:markdown+repo:chutsu/ditto";
+
+    var url = github_api + search_api + query + search_details;
+    var accept_header = "application/vnd.github.v3.text-match+json";
+
+    $.ajax(url, {headers: {Accept: accept_header}}).done(function(data) {
+        display_search_results(data);
+    });
+}
+
+function searchbar_listener(event) {
+    if (event.which === 13) {  // when user presses ENTER in search bar
+        var q = $("input[name=" + ditto.search_name + "]").val();
+        if (q !== "") {
+            location.hash = "#search=" + q;
+        } else {
+            alert("Error! Empty search query!");
+        }
     }
 }
 
@@ -112,13 +230,13 @@ function create_page_anchors() {
     for (var i = 2; i <= 4; i++) {
         // parse all headers
         var headers = [];
-        $('#content h' + i).map(function() {
+        $(ditto.content_id + ' h' + i).map(function() {
             headers.push($(this).text());
             $(this).addClass(replace_symbols($(this).text()));
         });
 
         // parse and set links between li and h2
-        $('#content ul li').map(function() {
+        $(ditto.content_id + ' ul li').map(function() {
             for (var j = 0; j < headers.length; j++) {
                 if (headers[j] === $(this).text()) {
                     li_create_linkage($(this), i);
@@ -146,8 +264,8 @@ function normalize_paths() {
 
 }
 
-function show_error() {
-    console.log("SHOW ERORR!");
+function show_error(err_msg) {
+    $(ditto.error_id).html(err_msg);
     $(ditto.error_id).show();
 }
 
@@ -163,11 +281,12 @@ function show_loading() {
     return loading;
 }
 
-function router() {
+function page_getter() {
     var path = location.hash.replace("#", "./");
 
     // default page if hash is empty
-    if (location.pathname === "/index.html") {
+    var current_page = location.pathname.split("/").pop();
+    if (current_page === "index.html") {
         path = location.pathname.replace("index.html", ditto.index);
         normalize_paths();
     } else if (path === "") {
@@ -187,11 +306,24 @@ function router() {
         create_page_anchors();
 
     }).fail(function() {
-        show_error();
+        show_error("Opps! ... File not found!");
 
     }).always(function() {
         clearInterval(loading);
         $(ditto.loading_id).hide();
 
     });
+}
+
+function router() {
+    var hash = location.hash;
+    console.log(hash);
+
+    if (hash.slice(1, 7) !== "search") {
+        page_getter();
+    } else {
+        if (ditto.searchbar) {
+            github_search(hash.replace("#search=", ""));
+        }
+    }
 }
