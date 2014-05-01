@@ -302,6 +302,13 @@ input[type=search] {
     padding: 0;
 }
 
+#content img.github_badges {
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
 #hide {
     display: none;
 }

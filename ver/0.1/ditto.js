@@ -275,7 +275,11 @@ function normalize_paths() {
             var base_dir = url.slice(0, url.length - 1).toString();
 
             // normalize the path (i.e. make it absolute)
-            $(this).attr("src", base_dir + "/" + src);
+            if (base_dir) {
+                $(this).attr("src", base_dir + "/" + src);
+            } else {
+                $(this).attr("src", src);
+            }
         }
     });
 
@@ -298,6 +302,25 @@ function show_loading() {
     return loading;
 }
 
+function escape_github_badges(data) {
+    $("img").map(function() {
+        var ignore_list = [
+            "travis-ci.org",
+            "coveralls.io"
+        ];
+        var src = $(this).attr("src");
+
+        var base_url = src.split("/");
+        var protocol = base_url[0];
+        var host = base_url[2];
+
+        if ($.inArray(host, ignore_list) >= 0) {
+            $(this).attr("class", "github_badges");
+        }
+    });
+    return data;
+}
+
 function page_getter() {
     var path = location.hash.replace("#", "./");
 
@@ -306,18 +329,23 @@ function page_getter() {
     if (current_page === "index.html") {
         path = location.pathname.replace("index.html", ditto.index);
         normalize_paths();
+
     } else if (path === "") {
         path = window.location + ditto.index;
         normalize_paths();
+
     } else {
         path = path + ".md";
+
     }
 
     // otherwise get the markdown and render it
     var loading = show_loading();
     $.get(path , function(data) {
         $(ditto.error_id).hide();
-        $(ditto.content_id).html(marked(data));
+        data = marked(data);
+        $(ditto.content_id).html(data);
+        escape_github_badges(data);
 
         normalize_paths();
         create_page_anchors();
@@ -338,9 +366,11 @@ function router() {
 
     if (hash.slice(1, 7) !== "search") {
         page_getter();
+
     } else {
         if (ditto.searchbar) {
             github_search(hash.replace("#search=", ""));
         }
+
     }
 }
