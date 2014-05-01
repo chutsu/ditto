@@ -10,7 +10,7 @@ version:
 	cp css/* ver/$$new_version; \
 	cp js/* ver/$$new_version; \
 	cp templates/* ver/$$new_version; \
-	sed -i "" 's/VER/'$$new_version'/g' ver/$$new_version/index.html; \
+	sed -i 's/VER/'$$new_version'/g' ver/$$new_version/index.html; \
 	echo "done :)"
 
 run_server:

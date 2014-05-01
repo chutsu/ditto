@@ -156,6 +156,8 @@ function build_result_matches_html(matches) {
 function display_search_results(data) {
     var results_html = "<h1>Search Results</h1>";
 
+    console.log(data);
+
     if (data.items.length) {
         $(ditto.error_id).hide();
         results_html += build_result_matches_html(data.items);
