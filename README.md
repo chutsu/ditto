@@ -1,8 +1,4 @@
 # ditto
-[![Build Status](http://travis-ci.org/chutsu/playground.png)][4]
-[![Coverage Status](https://coveralls.io/repos/chutsu/playground/badge.png)][5]
-
-
 `ditto` inspired by [flatdoc](http://ricostacruz.com/flatdoc/) is a markdown code
 documentation system, capable of producing documentation similar to
 [Three.js][1] and [Backbone.js][2]. It is designed for people who use Github
@@ -52,5 +48,3 @@ THE SOFTWARE.
 
 [1]: http://threejs.org/docs/
 [2]: http://backbonejs.org/
-[4]: https://travis-ci.org/chutsu/playground
-[5]: http://coveralls.io/r/chutsu/playground
