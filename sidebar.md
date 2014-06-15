@@ -13,3 +13,4 @@ version 0.1
 
 ## Projects that use ditto
 - [playground](http://chutsu.github.io/playground)
+- [direnv](http://direnv.net)
