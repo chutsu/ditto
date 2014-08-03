@@ -350,6 +350,10 @@ function page_getter() {
         normalize_paths();
         create_page_anchors();
 
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
     }).fail(function() {
         show_error("Opps! ... File not found!");
 
