@@ -3,7 +3,14 @@ default:
 	@echo "  - version: make a new ditto version"
 	@echo "  - run_server: run local http server"
 
-version:
+update_latest:
+	mkdir -p ver/latest; \
+	cp css/* ver/latest; \
+	cp js/* ver/latest; \
+	cp templates/* ver/latest; \
+	sed -i 's/VER/'latest'/g' ver/latest/index.html;
+
+version: update_latest
 	@read -p "enter new version name: " new_version; \
 	mkdir -p ver; \
 	mkdir ver/$$new_version; \
