@@ -14,3 +14,5 @@ version 0.1
 ## Projects that use ditto
 - [playground](http://chutsu.github.io/playground)
 - [direnv](http://direnv.net)
+- [rover](http://wallarelvo.github.io/rover)
+- [zeromq-ros](http://wallarelvo.github.io/zeromq-ros)
