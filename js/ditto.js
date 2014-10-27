@@ -64,7 +64,7 @@ function init_sidebar_section() {
 function init_back_to_top_button() {
     $(ditto.back_to_top_id).show();
     $(ditto.back_to_top_id).on("click", function() {
-        $("html body").animate({
+        $("body,html").animate({
             scrollTop: 0
         }, 200);
     });
@@ -366,7 +366,6 @@ function page_getter() {
 
 function router() {
     var hash = location.hash;
-    console.log(hash);
 
     if (hash.slice(1, 7) !== "search") {
         page_getter();

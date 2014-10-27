@@ -204,10 +204,10 @@ body {
     top: 20px;
 
     margin-left: 890px;
-    margin-top: 0px;
+    padding-top: 2px;
 
     color: #FFF;
-    line-height: 20px;
+    vertical-align: middle;
     text-align: center;
     font-size: 10px;
 
@@ -225,15 +225,15 @@ body {
     display: none;
     position: fixed;
 
-    height: 17px;
+    height: 20px;
     width: 70px;
-    top: 45px;
+    top: 50px;
 
     margin-left: 890px;
-    margin-top: 0px;
+    padding-top: 2px;
 
     color: #FFF;
-    line-height: 17px;
+    vertical-align: middle;
     text-align: center;
     font-size: 10px;
 
