@@ -272,7 +272,7 @@ function normalize_paths() {
 
             // split and extract base dir
             url = url.split("/");
-            var base_dir = url.slice(0, url.length - 1).toString();
+            var base_dir = url.slice(0, url.length - 1).join("/");
 
             // normalize the path (i.e. make it absolute)
             if (base_dir) {
