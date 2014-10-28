@@ -351,7 +351,9 @@ function page_getter() {
         create_page_anchors();
 
         $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
+            if (typeof hljs !== "undefined") {
+                hljs.highlightBlock(block);
+            }
         });
 
     }).fail(function() {
