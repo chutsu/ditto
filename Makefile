@@ -9,7 +9,7 @@ update_latest:
 	cp css/* ver/latest; \
 	cp js/* ver/latest; \
 	cp templates/* ver/latest; \
-	sed -i '' 's/VER/latest/g' ver/latest/index.html; \
+	sed -i 's/VER/latest/g' ver/latest/index.html; \
 	echo "updated latest!"
 
 version: update_latest
@@ -19,7 +19,7 @@ version: update_latest
 	cp css/* ver/$$new_version; \
 	cp js/* ver/$$new_version; \
 	cp templates/* ver/$$new_version; \
-	sed -i '' 's/VER/'$$new_version'/g' ver/$$new_version/index.html; \
+	sed -i 's/VER/'$$new_version'/g' ver/$$new_version/index.html; \
 	echo "done :)"
 
 run_server:
