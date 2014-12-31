@@ -323,6 +323,11 @@ function escape_github_badges(data) {
 }
 
 function page_getter() {
+    // When we fetch a new page we want to scroll back to the
+    // top of the window, otherwise we may show the user the
+    // middle of an existing document.
+    window.scrollTo(0, 0);
+
     var path = location.hash.replace("#", "./");
 
     // default page if hash is empty
