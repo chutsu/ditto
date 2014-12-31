@@ -271,8 +271,11 @@ function normalize_paths() {
             var url = location.hash.replace("#", "");
 
             // split and extract base dir
+            console.log(url);
             url = url.split("/");
-            var base_dir = url.slice(0, url.length - 1).toString();
+            console.log(url);
+            var base_dir = url.slice(0, url.length - 1).join("/");
+            console.log(base_url);
 
             // normalize the path (i.e. make it absolute)
             if (base_dir) {
