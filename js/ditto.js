@@ -56,7 +56,7 @@ function init_sidebar_section() {
         }
 
     }, "text").fail(function() {
-        alert("Opps! can't find the sidebar file to display!");
+        alert("Oops! can't find the sidebar file to display!");
     });
 
 }
@@ -162,7 +162,7 @@ function display_search_results(data) {
         $(ditto.error_id).hide();
         results_html += build_result_matches_html(data.items);
     } else {
-        show_error("Opps.. Found no matches!");
+        show_error("Oops! No matches found");
     }
 
     $(ditto.content_id).html(results_html);
@@ -357,8 +357,7 @@ function page_getter() {
         });
 
     }).fail(function() {
-        show_error("Opps! ... File not found!");
-
+        show_error("Oops! ... File not found!");
     }).always(function() {
         clearInterval(loading);
         $(ditto.loading_id).hide();
