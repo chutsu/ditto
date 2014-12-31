@@ -27,6 +27,8 @@ $(function($) {
 
         // LocalStorage id
         storage_key: "[DITTO]",
+        // 1 hour
+        cacheExpirationTime: 3600000,
 
         // initialize function
         run: initialize
@@ -37,11 +39,26 @@ $(function($) {
 
         store: function(key, value) {
             if (!value) return;
-            return localStorage[ditto.storage_key + key] = value;
+
+            var cacheTime = (Date.now() || (new Date).getTime())
+            console.log(cacheTime);
+            return localStorage[ditto.storage_key + key] = [value, cacheTime];
         },
 
         fetch: function(key) {
-            return localStorage[ditto.storage_key + key];
+            return localStorage[ditto.storage_key + key][0];
+        },
+
+        hasKey: function(key) {
+            var lookup = localStorage[ditto.storage_key + key];
+
+            if (!lookup) return false;
+
+            var value = lookup[0];
+            var curDate = (Date.now() || (new Date).getTime())
+            var cacheExpired = (curDate - lookup[1]) > ditto.cacheExpirationTime;
+
+            return cacheExpired ? false : value;
         }
     };
 
@@ -364,9 +381,9 @@ $(function($) {
 
         // otherwise get the markdown and render it
         show_loading();
-        var cache_value = cache.fetch(path);
 
-        if (cache.present && cache_value) {
+        if (cache.present && cache.hasKey(path)) {
+            var cache_value = cache.fetch(path);
             compile_into_dom(path, cache_value);
         } else {
             $.get(path, function(data) {
