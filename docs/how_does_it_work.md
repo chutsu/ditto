@@ -20,9 +20,9 @@ Documentation defined in `sidebar.md` should be of the form:
 
 For example:
 
-    - [Documentation 1](#docs/document_1)
-    - [Documentation 2](#docs/document_2)
-    - [Documentation 3](#docs/document_3)
+    - #docs/document_1
+    - #docs/document_2
+    - #docs/document_3
 
 When you click on the link, the hash is parsed and modified in such a way it
 converts it back to the file location where the documentation is:

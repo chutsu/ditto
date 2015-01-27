@@ -3,20 +3,10 @@
 <head>
     <title>ditto</title>
 
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-
-    <!-- marked -->
-    <script src="./js/marked.js"></script>
-
     <!-- highlight.js -->
     <link rel="stylesheet" href="./css/google_code.css">
-    <script src="./js/highlight_8.0.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- ditto -->
-    <script src="./js/ditto.js"></script>
     <link rel="stylesheet" href="./css/ditto.css">
 </head>
 <body>
@@ -31,20 +21,37 @@
     <div id="loading">Loading ...</div>
     <div id="error"></div>
 
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+    <!-- marked -->
+    <script src="./js/marked.js"></script>
+
+    <!-- highlight.js -->
+    <script src="./js/highlight_8.0.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- ditto -->
+    <script src="./js/ditto.js"></script>
     <script>
-        // essential settings
-        ditto.index = "README.md",
-        ditto.sidebar_file = "sidebar.md",
+        $(function($) {
+          hljs.initHighlightingOnLoad();
 
-        // optional settings if you want github search
-        ditto.github_username = "chutsu";
-        ditto.github_repo = "ditto";
+          // essential settings
+          ditto.index = "README.md",
+          ditto.sidebar_file = "sidebar.md",
 
-        // where the docs are actually stored on github - so you can edit
-        ditto.base_url = "https://github.com/chutsu/ditto/edit/gh-pages";
+          // optional settings if you want github search
+          ditto.github_username = "chutsu";
+          ditto.github_repo = "ditto";
 
-        // run
-        ditto.run();
+          // where the docs are actually stored on github - so you can edit
+          ditto.base_url = "https://github.com/chutsu/ditto/edit/gh-pages";
+
+          // run
+          ditto.run();
+        });
     </script>
 </body>
 </html>
