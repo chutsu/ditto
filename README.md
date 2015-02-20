@@ -19,6 +19,11 @@ Live Demo [**here**](http://chutsu.github.io/ditto)
 - Edit button to Github pages
 - Scroll back to top button
 
+## Contributers
+In no particular order:
+- Connor Atherton (ConnorAtherton)
+- Jacob Dufault (jacobdufault)
+- Sonny Piers (sonnyp)
 
 ### LICENSE
 
