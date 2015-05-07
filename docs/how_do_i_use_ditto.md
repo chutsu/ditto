@@ -34,11 +34,11 @@ snippet and save it as `index.html`
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
         <!-- marked -->
-        <script src="http://chutsu.github.io/ditto/ver/0.1/marked.min.js"></script>
+        <script src="http://chutsu.github.io/ditto/ver/latest/marked.min.js"></script>
 
         <!-- ditto -->
-        <script src="http://chutsu.github.io/ditto/ver/0.1/ditto.js"></script>
-        <link href="http://chutsu.github.io/ditto/ver/0.1/ditto.css" rel="stylesheet">
+        <script src="http://chutsu.github.io/ditto/ver/latest/ditto.js"></script>
+        <link href="http://chutsu.github.io/ditto/ver/latest/ditto.css" rel="stylesheet">
     </head>
     <body>
         <!-- essential -->
@@ -106,4 +106,4 @@ Do I really have to tell you what to put in here?
 
 
 
-[index_file]: http://raw.githubusercontent.com/chutsu/ditto/master/ver/0.1/index.html
+[index_file]: http://raw.githubusercontent.com/chutsu/ditto/master/ver/latest/index.html

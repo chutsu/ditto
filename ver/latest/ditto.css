@@ -102,7 +102,7 @@ body {
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 
-    background: #F8F8F8;
+    background: #3c3c3c;
     border-radius: 5px;
 }
 
@@ -113,13 +113,15 @@ body {
 #content code {
     padding-left: 5px;
     padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 
-    color: #222;
+    color: #EEE;
     font-size: 10px;
     font-weight: normal;
     font-family: Consolas, monospace;
 
-    background: #F8F8F8;
+    background: #3c3c3c;
     border-radius: 2px;
 }
 
@@ -200,7 +202,7 @@ body {
     position: fixed;
 
     height: 20px;
-    width: 70px;
+    width: 50px;
     top: 20px;
 
     margin-left: 890px;
@@ -211,12 +213,36 @@ body {
     text-align: center;
     font-size: 10px;
 
+    border-radius: 5px;
+    background-color: #AAA;
+}
+
+#back_to_top:hover {
+    background-color: #444;
+    cursor: pointer;
+}
+
+#edit {
+    display: none;
+    position: fixed;
+
+    height: 20px;
+    width: 50px;
+    top: 50px;
+
+    margin-left: 890px;
+    padding-top: 2px;
+
+    color: #FFF;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 10px;
 
     border-radius: 5px;
     background-color: #AAA;
 }
 
-#back_to_top:hover, #edit:hover {
+#edit:hover {
     background-color: #444;
     cursor: pointer;
 }
