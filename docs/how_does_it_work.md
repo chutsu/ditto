@@ -27,6 +27,7 @@ For example:
 When you click on the link, the hash is parsed and modified in such a way it
 converts it back to the file location where the documentation is:
 
+
     From:                         To:
 
     #docs/document_1 -----------> docs/document_1.md
@@ -48,7 +49,9 @@ For example say you are editing the doc in `docs/some_doc.md` and you link the
 image in `docs/images/image_1.jpg`. Naturally when you edit the file you would
 write this in markdown:
 
+
     ![some image](images/image_1.jpg)
+
 
 However that doesn't work without magick, because the server root is `/` and it would look for
 `images/image_1.jpg`, which is the wrong place.
