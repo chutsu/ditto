@@ -202,11 +202,11 @@ body {
     position: fixed;
 
     height: 20px;
+    line-height: 20px;
     width: 50px;
     top: 20px;
 
     margin-left: 890px;
-    padding-top: 2px;
 
     color: #FFF;
     vertical-align: middle;
@@ -227,11 +227,11 @@ body {
     position: fixed;
 
     height: 20px;
+    line-height: 20px;
     width: 50px;
     top: 50px;
 
     margin-left: 890px;
-    padding-top: 2px;
 
     color: #FFF;
     vertical-align: middle;
