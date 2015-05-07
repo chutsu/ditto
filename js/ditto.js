@@ -35,31 +35,52 @@ $(function($) {
     };
 
     var cache = {
-        present: !!window.localStorage,
-
-        store: function(key, value) {
-            if (!value) return;
-
-            var cacheTime = (Date.now() || (new Date).getTime())
-            console.log(cacheTime);
-            return localStorage[ditto.storage_key + key] = [value, cacheTime];
-        },
-
-        fetch: function(key) {
-            return localStorage[ditto.storage_key + key][0];
-        },
-
-        hasKey: function(key) {
-            var lookup = localStorage[ditto.storage_key + key];
-
-            if (!lookup) return false;
-
-            var value = lookup[0];
-            var curDate = (Date.now() || (new Date).getTime())
-            var cacheExpired = (curDate - lookup[1]) > ditto.cacheExpirationTime;
-
-            return cacheExpired ? false : value;
+      store: function(key, value) {
+        // We need to check it is supported because
+        // private browsing in safari says it's there
+        // but you can't actually use it
+        if (!value || !cache.supported()) {
+          return;
         }
+
+        var cacheTime = (Date.now() || (new Date).getTime());
+        return localStorage[ditto.storage_key + key] = JSON.stringify([value, cacheTime]);
+      },
+
+      fetch: function(key) {
+        var value = localStorage[ditto.storage_key + key];
+        if (!value || !cache.supported()) {
+          return;
+        }
+
+        value = JSON.parse(value);
+
+        return value[0];
+      },
+
+      hasKey: function(key) {
+          var value = localStorage[ditto.storage_key + key];
+
+          if (!value) return false;
+
+          var curDate = (Date.now() || (new Date).getTime());
+          var cacheExpired = (curDate - value[1]) > ditto.cacheExpirationTime;
+
+          return cacheExpired ? false : true;
+      },
+
+      supported: function() {
+        var testKey = 'test';
+        var storage = window.localStorage;
+
+        try {
+          storage.setItem(testKey, 'test');
+          storage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
     };
 
     function initialize() {
@@ -381,8 +402,7 @@ $(function($) {
 
         // otherwise get the markdown and render it
         show_loading();
-
-        if (cache.present && cache.hasKey(path)) {
+        if (cache.supported() && cache.hasKey(path)) {
             var cache_value = cache.fetch(path);
             compile_into_dom(path, cache_value);
         } else {
