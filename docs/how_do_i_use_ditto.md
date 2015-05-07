@@ -53,20 +53,22 @@ snippet and save it as `index.html`
 
         <!-- custom script -->
         <script>
-            // essential settings
-            ditto.index = "README.md";
-            ditto.sidebar_file = "sidebar.md";
+            $(function($) {
+                // essential settings
+                ditto.index = "README.md";          // <-- CREATE YOUR OWN "README.md"
+                ditto.sidebar_file = "sidebar.md";  // <-- CREATE YOUR OWN "sidebar.md"
 
-            // optional settings if you want github search
-            ditto.github_username = null;   // <-- EDIT THIS LINE! e.g. "chutsu"
-            ditto.github_repo = null;       // <-- EDIT THIS LINE! e.g. "ditto"
+                // optional settings if you want github search
+                ditto.github_username = null;       // <-- EDIT THIS LINE! e.g. "chutsu"
+                ditto.github_repo = null;           // <-- EDIT THIS LINE! e.g. "ditto"
 
-            // where the docs are actually stored on github - so you can edit
-            // e.g. https://github.com/chutsu/ditto/edit/gh-pages/
-            ditto.base_url = "";            // <-- EDIT THIS LINE!
+                // where the docs are actually stored on github - so you can edit
+                // e.g. https://github.com/chutsu/ditto/edit/gh-pages/
+                ditto.base_url = "";                // <-- EDIT THIS LINE!
 
-            // run
-            ditto.run();
+                // run
+                ditto.run();
+            });
         </script>
     </body>
     </html>
@@ -103,7 +105,6 @@ If you want the GitHub search bar enter the following in the same file:
 
 ## README.md
 Do I really have to tell you what to put in here?
-
 
 
 [index_file]: http://raw.githubusercontent.com/chutsu/ditto/master/ver/latest/index.html
