@@ -21,66 +21,12 @@ $(function($) {
     back_to_top_button: true,
     searchbar: true,
 
-      // github specifics
+    // github specifics
     github_username: null,
     github_repo: null,
 
-      // LocalStorage id
-    storage_key: "[DITTO]",
-      // 1 hour
-    cacheExpirationTime: 3600000,
-
-      // initialize function
+    // initialize function
     run: initialize
-  };
-
-  var cache = {
-    store: function(key, value) {
-      // We need to check it is supported because
-      // private browsing in safari says it's there
-      // but you can't actually use it
-      if (!value || !cache.supported()) {
-        return;
-      }
-
-      var cacheTime = (Date.now() || (new Date).getTime());
-      return localStorage[ditto.storage_key + key] = JSON.stringify([value, cacheTime]);
-    },
-
-    fetch: function(key) {
-      var value = localStorage[ditto.storage_key + key];
-      if (!value || !cache.supported()) {
-        return;
-      }
-
-      value = JSON.parse(value);
-
-      return value[0];
-    },
-
-    hasKey: function(key) {
-      var value = localStorage[ditto.storage_key + key];
-
-      if (!value) return false;
-
-      var curDate = (Date.now() || (new Date).getTime());
-      var cacheExpired = (curDate - value[1]) > ditto.cacheExpirationTime;
-
-      return cacheExpired ? false : true;
-    },
-
-    supported: function() {
-      var testKey = 'test';
-      var storage = window.localStorage;
-
-      try {
-        storage.setItem(testKey, 'test');
-        storage.removeItem(testKey);
-        return true;
-      } catch (error) {
-        return false;
-      }
-    }
   };
 
   function initialize() {
@@ -406,16 +352,11 @@ $(function($) {
 
     // otherwise get the markdown and render it
     show_loading();
-    if (cache.supported() && cache.hasKey(path)) {
-      var cache_value = cache.fetch(path);
-      compile_into_dom(path, cache_value);
-    } else {
-      $.get(path, function(data) {
-        compile_into_dom(path, data);
-      }).fail(function() {
-        show_error("Opps! ... File not found!");
-      })
-    }
+    $.get(path, function(data) {
+      compile_into_dom(path, data);
+    }).fail(function() {
+      show_error("Opps! ... File not found!");
+    })
   }
 
   function compile_into_dom(path, data) {
@@ -423,7 +364,6 @@ $(function($) {
     data = marked(data);
     ditto.content_id.html(data);
     stop_loading();
-    cache.store(path, data);
     escape_github_badges(data);
 
     normalize_paths();
@@ -445,5 +385,4 @@ $(function($) {
   }
 
   window.ditto = ditto;
-
 });
