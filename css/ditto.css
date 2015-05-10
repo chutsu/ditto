@@ -81,9 +81,7 @@ body {
     padding-bottom: 150px;
 
     text-align: justify;
-    font-size: 13px;
-
-    /* border: 1px solid black; */
+    font-size: 1.0em;
 }
 
 #content pre {
@@ -102,12 +100,13 @@ body {
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 
-    background: #3c3c3c;
+    background: #F7FAFB;
     border-radius: 5px;
 }
 
 #content pre code {
     padding-left: 0;
+    border: none;
 }
 
 #content code {
@@ -116,12 +115,13 @@ body {
     padding-top: 1px;
     padding-bottom: 1px;
 
-    color: #EEE;
+    color: #555;
     font-size: 10px;
     font-weight: normal;
     font-family: Consolas, monospace;
 
-    background: #3c3c3c;
+    background: #F7FAFB;
+    border: 1px solid #E3EDF3;
     border-radius: 2px;
 }
 
