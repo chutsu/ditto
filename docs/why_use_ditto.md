@@ -1,10 +1,12 @@
 # Why use ditto?
 
-For those who are experienced programmers, we've all heard that too much
-comments is a bad thing, because your code should be simple and readable enough
-that I should be able to understand your design decisions with relative ease.
-This topic has been explored by the likes of Jeff Atwood's ["Coding Without
-Comments"][1], where his article opens with:
+Docs are ugly and hard, period. We've all heard that too much comments is a bad
+thing, because your code should be simple and readable enough that I should be
+able to understand your design decisions with ease, and yet the most code
+documentation is in the code itself, this leads to huge comment blocks where
+the programmer probably spends more time scrolling then reading actual code.
+This has been discussed by Jeff Atwood's ["Coding Without Comments"][1], where
+his article opens with:
 
 > If peppering your code with lots of comments is good, then having zillions of
 > comments in your code must be great, right? Not quite. Excess is one way good
@@ -140,9 +142,9 @@ And yet nothing much as changed in terms of documentation generation, worst yet
 it is being encouraged by the likes of [Docco][2]. That produce annotated
 sources like [this][3]. While it is beautiful on the rendered html, that is
 still not the answer to good documentation IMHO. I personally find that
-comments just gets in the way of programming, it is an eye sore to look at
-needless comments, that it can actually slow down your productivity, because
-you have to scroll down to the relevant function.
+documentation in code just gets in the way of programming, it is an eye sore to
+look at needless comments, that it can actually slow down your productivity,
+because you have to scroll down to the relevant function.
 
 Instead of this:
 
@@ -175,12 +177,10 @@ Would you not want to refactor the above code and work with this?:
     }
     System.out.println( "r = " + SquareRootApproximation(r) );
 
-
-
-And to conclude this is the reason why I've created `ditto`, I think markdown
-files are the easiest way to have both the source and documentation side by
-side, so that programmers can either focus on code or generate documentation 
-without being slowed down.
+This is the major reason why I've created `ditto`, I think markdown files are
+the easiest way to have both the source and documentation side by side, so that
+programmers can either focus on code or generate documentation or both without
+being slowed down, and I hope you like it :)
 
 
 [1]: http://blog.codinghorror.com/coding-without-comments/
