@@ -1,23 +1,24 @@
 # ditto
 `ditto` inspired by [flatdoc](http://ricostacruz.com/flatdoc/) is a markdown code
 documentation system, capable of producing documentation similar to
-[Three.js][1] and [Backbone.js][2]. It is designed for people who use Github
-Pages to host their code documentation, but it can easily be adapted for other
-use cases (it only consists of html, css, and javascript after all).
+[Three.js][2] and [Backbone.js][3], check out live demo [here][1]. It is
+designed for people who use Github Pages to host their code documentation, but
+you can also host it yourself.
 
+You want to use ditto because
+- Docs are in markdown
 - No build process needed
 - Deployable via GitHub Pages
-- Easily customizable (**No bloated Twitter Bootstrap**)
-- Can fetch more than just the README file
-- Just create an HTML file, create some markdown files and deploy! :)
 
-Live Demo [**here**](http://chutsu.github.io/ditto)
 
-## Features
-- **NEW Github Search**! (on your gh-pages)
-- Auto-generation of Page Anchors
-- Edit button to Github pages
-- Scroll back to top button
+## How do I start?
+Enter the following command and follow instructions:
+
+
+    sh -c $(curl -O http://git.io/)
+
+
+Or alternatively see this page for [instructions][4].
 
 
 ### LICENSE
@@ -46,5 +47,7 @@ THE SOFTWARE.
 
 
 
-[1]: http://threejs.org/docs/
-[2]: http://backbonejs.org/
+[1]: http://chutsu.github.io/ditto
+[2]: http://threejs.org/docs/
+[3]: http://backbonejs.org/
+[4]: http://chutsu.github.io/ditto/#docs/how_do_i_use_ditto

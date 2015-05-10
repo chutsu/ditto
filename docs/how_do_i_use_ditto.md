@@ -26,52 +26,56 @@ host your files.
 [Download][index_file](<- right-click "Save as") or copy the following code
 snippet and save it as `index.html`
 
+
     <!DOCTYPE html>
     <html>
     <head>
-        <!-- jQuery -->
+        <title>TITLE</title>  <!-- EDIT ME!! -->
+
+        <!-- JQUERY -->
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
-        <!-- marked -->
-        <script src="http://chutsu.github.io/ditto/ver/latest/marked.min.js"></script>
+        <!-- MARKED -->
+        <script src="//chutsu.github.io/ditto/ver/VER/marked.js"></script>
 
-        <!-- ditto -->
-        <script src="http://chutsu.github.io/ditto/ver/latest/ditto.js"></script>
-        <link href="http://chutsu.github.io/ditto/ver/latest/ditto.css" rel="stylesheet">
+        <!-- DITTO CSS -->
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/VER/ditto.css">
+        <script src="//chutsu.github.io/ditto/ver/VER/js/ditto.js"></script>
     </head>
     <body>
-        <!-- essential -->
+        <!-- ESSENTIAL -->
         <div id="sidebar"></div>
         <div id="content"></div>
+        <div id="hide"></div>
 
-        <!-- optional -->
-        <div id="back_to_top">back to top</div>
+        <!-- OPTIONAL -->
+        <div id="back_to_top">top</div>
         <div id="edit">edit</div>
         <div id="loading">Loading ...</div>
         <div id="error"></div>
 
-        <!-- custom script -->
+        <!-- DITTO -->
         <script>
             $(function($) {
-                // essential settings
-                ditto.index = "README.md";          // <-- CREATE YOUR OWN "README.md"
-                ditto.sidebar_file = "sidebar.md";  // <-- CREATE YOUR OWN "sidebar.md"
+            // essential settings
+            ditto.index = "README.md",
+            ditto.sidebar_file = "sidebar.md",
 
-                // optional settings if you want github search
-                ditto.github_username = null;       // <-- EDIT THIS LINE! e.g. "chutsu"
-                ditto.github_repo = null;           // <-- EDIT THIS LINE! e.g. "ditto"
+            // optional settings if you want github search
+            ditto.github_username = null;   // <------- EDIT ME!!
+            ditto.github_repo = null;       // <------- EDIT ME!!
 
-                // where the docs are actually stored on github - so you can edit
-                // e.g. https://github.com/chutsu/ditto/edit/gh-pages/
-                ditto.base_url = "";                // <-- EDIT THIS LINE!
+            // where the docs are actually stored on github - so you can edit
+            ditto.base_url = "";            // <------- EDIT ME!!
 
-                // run
-                ditto.run();
+            // run
+            ditto.run();
             });
         </script>
     </body>
     </html>
+
 
 Edit:
 - `ditto.index`
