@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+    <title>TITLE</title>  <!-- EDIT ME!! -->
 
-    <!-- marked -->
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+    <!-- MARKED -->
     <script src="//chutsu.github.io/ditto/ver/latest/marked.js"></script>
 
-    <!-- highlight.js -->
-    <link rel="stylesheet" href="./css/google_code.css">
-    <script src="./js/highlight_8.0.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- ditto -->
-    <script src="//chutsu.github.io/ditto/ver/latest/ditto.js"></script>
+    <!-- DITTO CSS -->
     <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/ditto.css">
+    <script src="//chutsu.github.io/ditto/ver/latest/js/ditto.js"></script>
 </head>
 <body>
-    <!-- essential -->
+    <!-- ESSENTIAL -->
     <div id="sidebar"></div>
     <div id="content"></div>
+    <div id="hide"></div>
 
-    <!-- optional -->
-    <div id="back_to_top">back to top</div>
+    <!-- OPTIONAL -->
+    <div id="back_to_top">top</div>
     <div id="edit">edit</div>
     <div id="loading">Loading ...</div>
     <div id="error"></div>
 
+    <!-- DITTO -->
     <script>
-        // essential settings
-        ditto.index = "README.md",
-        ditto.sidebar_file = "sidebar.md",
+        $(function($) {
+          // essential settings
+          ditto.index = "README.md",
+          ditto.sidebar_file = "sidebar.md",
 
-        // optional settings if you want github search
-        ditto.github_username = null;   // <------- EDIT ME!!
-        ditto.github_repo = null;       // <------- EDIT ME!!
+          // optional settings if you want github search
+          ditto.github_username = null;   // <------- EDIT ME!!
+          ditto.github_repo = null;       // <------- EDIT ME!!
 
-        // where the docs are actually stored on github - so you can edit
-        ditto.base_url = "";            // <------- EDIT ME!!
+          // where the docs are actually stored on github - so you can edit
+          ditto.base_url = "";            // <------- EDIT ME!!
 
-        // run
-        ditto.run();
+          // run
+          ditto.run();
+        });
     </script>
 </body>
 </html>
