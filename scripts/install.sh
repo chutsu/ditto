@@ -21,6 +21,16 @@ In the above two links (FAQ and API) ditto will look for files in
 your links so you don't have to)
 EOF
 
+cat << EOF > docs/faq.md
+# FAQ
+FAQ content here!!
+EOF
+
+cat << EOF > docs/api.md
+# API
+API content here!!
+EOF
+
     echo "";
     echo "";
 }

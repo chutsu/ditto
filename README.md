@@ -15,7 +15,7 @@ You want to use ditto because
 Enter the following command and follow instructions:
 
 
-    sh -c $(curl -O http://git.io/)
+    curl -L http://git.io/vUWYz > install.sh && sh install.sh
 
 
 Or alternatively see this page for [instructions][4].
