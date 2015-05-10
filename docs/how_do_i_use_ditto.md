@@ -67,6 +67,7 @@ snippet and save it as `index.html`
             ditto.github_repo = null;       // <------- EDIT ME!!
 
             // where the docs are actually stored on github - so you can edit
+            // e.g. https://github.com/chutsu/ditto/edit/gh-pages
             ditto.base_url = "";            // <------- EDIT ME!!
 
             // run
