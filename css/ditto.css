@@ -106,6 +106,7 @@ body {
 
 #content pre code {
     padding-left: 0;
+    font-size: 1.1em;
     border: none;
 }
 
