@@ -62,21 +62,21 @@ snippet and save it as `index.html`
         <!-- DITTO -->
         <script>
             $(function($) {
-            // essential settings
-            ditto.index = "README.md",
-            ditto.sidebar_file = "sidebar.md",
+                // essential settings
+                ditto.index = "README.md",
+                ditto.sidebar_file = "sidebar.md",
 
-            // optional settings if you want github search
-            ditto.github_username = null;   // <------- EDIT ME!!
-            ditto.github_repo = null;       // <------- EDIT ME!!
-            ditto.highlight_code = true;    // <------- EDIT ME!!
+                // optional settings if you want github search
+                ditto.github_username = null;   // <------- EDIT ME!!
+                ditto.github_repo = null;       // <------- EDIT ME!!
+                ditto.highlight_code = true;    // <------- EDIT ME!!
 
-            // where the docs are actually stored on github - so you can edit
-            // e.g. https://github.com/chutsu/ditto/edit/gh-pages
-            ditto.base_url = "";            // <------- EDIT ME!!
+                // where the docs are actually stored on github - so you can edit
+                // e.g. https://github.com/chutsu/ditto/edit/gh-pages
+                ditto.base_url = "";            // <------- EDIT ME!!
 
-            // run
-            ditto.run();
+                // run
+                ditto.run();
             });
         </script>
     </body>
