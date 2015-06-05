@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ditto</title>  <!-- EDIT ME!! -->
+    <title>TITLE</title>  <!-- EDIT ME!! -->
 
     <!-- JQUERY -->
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
     <!-- MARKED -->
-    <script src="//chutsu.github.io/ditto/ver/latest/marked.js"></script>
+    <script src="//chutsu.github.io/ditto/ver/0.12/marked.js"></script>
 
     <!-- HIGHLIGHT.JS -->
-    <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/github.css">
-    <script src="//chutsu.github.io/ditto/ver/latest/highlight.js"></script>
+    <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/0.12/github.css">
+    <script src="//chutsu.github.io/ditto/ver/0.12/highlight.js"></script>
 
-    <!-- DITTO -->
-    <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/ditto.css">
-    <script src="js/ditto.js"></script>
+    <!-- DITTO CSS -->
+    <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/0.12/ditto.css">
+    <script src="//chutsu.github.io/ditto/ver/0.12/ditto.js"></script>
 </head>
 <body>
     <!-- ESSENTIAL -->
@@ -38,11 +38,13 @@
           ditto.sidebar_file = "sidebar.md",
 
           // optional settings if you want github search
-          ditto.github_username = "chutsu";   // <------- EDIT ME!!
-          ditto.github_repo = "ditto";       // <------- EDIT ME!!
+          ditto.github_username = null;   // <------- EDIT ME!!
+          ditto.github_repo = null;       // <------- EDIT ME!!
+          ditto.highlight_code = true;    // <------- EDIT ME!!
 
           // where the docs are actually stored on github - so you can edit
-          ditto.base_url = "https://github.com/chutsu/ditto/edit/gh-pages";
+          // e.g. https://github.com/chutsu/ditto/edit/gh-pages
+          ditto.base_url = "";            // <------- EDIT ME!!
 
           // run
           ditto.run();
