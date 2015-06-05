@@ -354,6 +354,7 @@ $(function($) {
       compile_into_dom(path, data);
     }).fail(function() {
       show_error("Opps! ... File not found!");
+      stop_loading();
     })
   }
 
