@@ -224,9 +224,7 @@ $(function($) {
     // add click listener - on click scroll to relevant header section
     $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(function() {
       // scroll to relevant section
-      var header = $(
-          ditto.content_id + " h" + header_level + "." + li_tag.attr("id")
-          );
+      var header = $("h" + header_level + "." + li_tag.attr("id"));
       $('html, body').animate({
         scrollTop: header.offset().top
       }, 200);
