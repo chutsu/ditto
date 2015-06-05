@@ -37,11 +37,15 @@ snippet and save it as `index.html`
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
         <!-- MARKED -->
-        <script src="//chutsu.github.io/ditto/ver/VER/marked.js"></script>
+        <script src="//chutsu.github.io/ditto/ver/latest/marked.js"></script>
+
+        <!-- HIGHLIGHT.JS -->
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/github.css">
+        <script src="//chutsu.github.io/ditto/ver/latest/highlight.js"></script>
 
         <!-- DITTO CSS -->
-        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/VER/ditto.css">
-        <script src="//chutsu.github.io/ditto/ver/VER/js/ditto.js"></script>
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/ditto.css">
+        <script src="//chutsu.github.io/ditto/ver/latest/js/ditto.js"></script>
     </head>
     <body>
         <!-- ESSENTIAL -->
@@ -65,6 +69,7 @@ snippet and save it as `index.html`
             // optional settings if you want github search
             ditto.github_username = null;   // <------- EDIT ME!!
             ditto.github_repo = null;       // <------- EDIT ME!!
+            ditto.highlight_code = true;    // <------- EDIT ME!!
 
             // where the docs are actually stored on github - so you can edit
             // e.g. https://github.com/chutsu/ditto/edit/gh-pages

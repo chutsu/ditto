@@ -15,6 +15,8 @@ $(function($) {
     fragments_class: ".fragments",
     fragment_class: ".fragment",
 
+    highlight_code: true,
+
     // display elements
     sidebar: true,
     edit_button: true,
@@ -30,9 +32,6 @@ $(function($) {
   };
 
   function initialize() {
-    // clear localStorage
-    window.localStorage.clear();
-
     // initialize sidebar and buttons
     if (ditto.sidebar) {
       init_sidebar_section();
@@ -44,6 +43,11 @@ $(function($) {
 
     if (ditto.edit_button) {
       init_edit_button();
+    }
+
+    // intialize highligh.js
+    if (ditto.highlight_code) {
+      hljs.initHighlightingOnLoad();
     }
 
     // page router
@@ -224,9 +228,7 @@ $(function($) {
     // add click listener - on click scroll to relevant header section
     $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(function() {
       // scroll to relevant section
-      var header = $(
-          ditto.content_id + " h" + header_level + "." + li_tag.attr("id")
-          );
+      var header = $("h" + header_level + "." + li_tag.attr("id"));
       $('html, body').animate({
         scrollTop: header.offset().top
       }, 200);
@@ -356,6 +358,7 @@ $(function($) {
       compile_into_dom(path, data);
     }).fail(function() {
       show_error("Opps! ... File not found!");
+      stop_loading();
     })
   }
 
@@ -368,6 +371,12 @@ $(function($) {
 
     normalize_paths();
     create_page_anchors();
+
+    if (ditto.highlight_code) {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    }
   }
 
   function router() {
