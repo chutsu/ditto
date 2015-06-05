@@ -69,7 +69,7 @@ snippet and save it as `index.html`
                 // optional settings if you want github search
                 ditto.github_username = null;   // <------- EDIT ME!!
                 ditto.github_repo = null;       // <------- EDIT ME!!
-                ditto.highlight_code = true;    // <------- EDIT ME!!
+                ditto.highlight_code = false;    // <------- EDIT ME!!
 
                 // where the docs are actually stored on github - so you can edit
                 // e.g. https://github.com/chutsu/ditto/edit/gh-pages
