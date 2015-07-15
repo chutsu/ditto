@@ -6,5 +6,5 @@ version 0.1
 [ditto:searchbar]
 
 ## Header 2
-- [Page1](#docs/page1)
-- [Page2](#docs/page2)
+- [Page1](#page1)
+- [Page2](#page2)
