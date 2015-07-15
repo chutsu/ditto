@@ -15,14 +15,14 @@ differently by you otherwise).
 
 Documentation defined in `sidebar.md` should be of the form:
 
-    #folder_containing_docs/file_name_without_extension
+    #file_name_without_extension
 
 
 For example:
 
-    - #docs/document_1
-    - #docs/document_2
-    - #docs/document_3
+    - #document_1
+    - #document_2
+    - #document_3
 
 When you click on the link, the hash is parsed and modified in such a way it
 converts it back to the file location where the documentation is:
@@ -30,7 +30,7 @@ converts it back to the file location where the documentation is:
 
     From:                         To:
 
-    #docs/document_1 -----------> docs/document_1.md
+    #document_1 ----------------> docs/document_1.md
 
 
 `jQuery` then launches a GET request to the server requesting the markdown file

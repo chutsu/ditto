@@ -63,8 +63,8 @@ snippet and save it as `index.html`
         <script>
             $(function($) {
                 // essential settings
-                ditto.index = "README.md",
-                ditto.sidebar_file = "sidebar.md",
+                ditto.index = "README",
+                ditto.sidebar_file = "sidebar",
 
                 // optional settings if you want github search
                 ditto.github_username = null;   // <------- EDIT ME!!
@@ -92,25 +92,30 @@ Edit:
 
 as you see fit.
 
+Also, you can specify a folder other than `docs`, and also a different file extension than `.md`
+
+- `ditto.base_dir`
+- `ditto.file_extension`
+
 
 ## sidebar.md
 In the `sidebar.md` file you can create links to documentation you wish to list
 (just as you would in markdown). You have to list them in the form:
 
-    #folder_containing_docs/file_name_without_extension
+    #file_name_without_extension
 
 For example:
 
-    - [Documentation 1](#docs/document_1)
-    - [Documentation 2](#docs/document_2)
-    - [Documentation 3](#docs/document_3)
+    - [Documentation 1](#document_1)
+    - [Documentation 2](#document_2)
+    - [Documentation 3](#document_3)
 
 If you want the GitHub search bar enter the following in the same file:
 
     [ditto:searchbar]
 
 **IMPORTANT NOTE**:
-- Add `#` infront of `docs`, where `docs` is the folder where `document_1.md` resides
+- Add `#` infront of `document_1.md` to ensure it is found in the docs folder
 - Also ___DO NOT___ INCLUDE THE FILE EXTENSION AT THE END!
 
 ## README.md

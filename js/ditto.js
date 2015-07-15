@@ -27,6 +27,10 @@ $(function($) {
     github_username: null,
     github_repo: null,
 
+    // Base directory
+    base_dir: "docs",
+    file_extension: ".md",
+
     // initialize function
     run: initialize
   };
@@ -56,7 +60,7 @@ $(function($) {
   }
 
   function init_sidebar_section() {
-    $.get(ditto.sidebar_file, function(data) {
+    $.get(ditto.sidebar_file + ditto.file_extension, function(data) {
       ditto.sidebar_id.html(marked(data));
 
       if (ditto.searchbar) {
@@ -88,10 +92,10 @@ $(function($) {
         var hash = location.hash.replace("#", "/");
 
         if (hash === "") {
-          hash = "/" + ditto.index.replace(".md", "");
+          hash = "/" + ditto.index + ditto.file_extension;
         }
 
-        window.open(ditto.base_url + hash + ".md");
+        window.open(ditto.base_url + hash + ditto.file_extension);
         // open is better than redirecting, as the previous page history
         // with redirect is a bit messed up
       });
@@ -141,8 +145,8 @@ $(function($) {
     for (var i = 0; i < matches.length; i++) {
       var url = matches[i].path;
 
-      if (url !== ditto.sidebar_file) {
-        var hash = "#" + url.replace(".md", "");
+      if (url !== ditto.sidebar_file + ditto.file_extension) {
+        var hash = "#" + url.replace(ditto.file_extension, "");
         var path = window.location.origin+ "/" + hash;
 
         // html += "<li>";
@@ -173,7 +177,7 @@ $(function($) {
 
     ditto.content_id.html(results_html);
     $(ditto.search_results_class + " .link").click(function(){
-      var destination = "#" + $(this).html().replace(".md", "");
+      var destination = "#" + $(this).html().replace(ditto.file_extension, "");
       location.hash = destination;
     });
   }
@@ -272,7 +276,7 @@ $(function($) {
     ditto.content_id.find("img").map(function() {
       var src = $(this).attr("src").replace("./", "");
       if ($(this).attr("src").slice(0, 5) !== "http") {
-        var url = location.hash.replace("#", "");
+        var url = location.hash.replace("#", ditto.base_dir + "/");
 
         // split and extract base dir
         url = url.split("/");
@@ -335,20 +339,20 @@ $(function($) {
 
   function page_getter() {
     window.scrollTo(0, 0);
-    var path = location.hash.replace("#", "./");
+    var path = location.hash.replace("#", "./" + ditto.base_dir + "/");
 
     // default page if hash is empty
     var current_page = location.pathname.split("/").pop();
     if (current_page === "index.html") {
-      path = location.pathname.replace("index.html", ditto.index);
+      path = location.pathname.replace("index.html", ditto.index + ditto.file_extension);
       normalize_paths();
 
     } else if (path === "") {
-      path = window.location + ditto.index;
+      path = window.location + ditto.index + ditto.file_extension;
       normalize_paths();
 
     } else {
-      path = path + ".md";
+      path = path + ditto.file_extension;
 
     }
 

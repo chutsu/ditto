@@ -6,10 +6,10 @@ version 0.12
 [ditto:searchbar]
 
 ## FAQ
-- [How do I use ditto?](#docs/how_do_i_use_ditto)
-- [How does it work?](#docs/how_does_it_work)
-- [Why use ditto?](#docs/why_use_ditto)
-- [How do I run ditto locally?](#docs/how_do_i_run_ditto_locally)
+- [How do I use ditto?](#how_do_i_use_ditto)
+- [How does it work?](#how_does_it_work)
+- [Why use ditto?](#why_use_ditto)
+- [How do I run ditto locally?](#how_do_i_run_ditto_locally)
 
 ## Projects that use ditto
 - [playground](http://chutsu.github.io/playground)
