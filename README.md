@@ -11,6 +11,7 @@ You want to use ditto because
 - Deployable via GitHub Pages
 
 
+
 ## How do I start?
 Enter the following command and follow instructions:
 
@@ -19,6 +20,7 @@ Enter the following command and follow instructions:
 
 
 Or alternatively see this page for [instructions][4].
+
 
 
 ### LICENSE
