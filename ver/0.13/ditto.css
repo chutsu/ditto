@@ -174,28 +174,15 @@ body {
     list-style-type: none;
 }
 
-#content ul .fragments li:before {
-    content: "";
-    position: relative;
-    left: 0px;
-}
-
-#content ul li {
-    text-align: left;
-    text-indent: -5px;  /* to compensate for the padding for the dash */
-    font-size: 13px;
-}
-
 #content ul li:before {  /* a hack to have dashes as a list style */
     content: "-";
     position: relative;
     left: -5px;
 }
 
-#content ul li.fragment:before {
-    content: "";
-    margin: 0;
-    padding: 0;
+#content ul li {
+    text-indent: -5px;  /* to compensate for the padding for the dash */
+    font-size: 13px;
 }
 
 #content ul li.link {
@@ -209,17 +196,6 @@ body {
 #content a:link, #content a:visited {
     color: #4682BE;
     text-decoration: none;
-}
-
-#content img.github_badges {
-    display: inline;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-#content .MathJax_Display {
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 #back_to_top {
@@ -316,6 +292,28 @@ input[type=search] {
 
 .search_results .link {
     margin-top: 35px;
+}
+
+#content ul li {
+    text-align: left;
+}
+
+#content ul .fragments li:before {
+    content: "";
+    position: relative;
+    left: 0px;
+}
+
+#content ul li.fragment:before {
+    content: "";
+    margin: 0;
+    padding: 0;
+}
+
+#content img.github_badges {
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 

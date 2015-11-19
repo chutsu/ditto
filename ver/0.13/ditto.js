@@ -355,26 +355,35 @@ $(function($) {
     // otherwise get the markdown and render it
     show_loading();
     $.get(path, function(data) {
-      compile_into_dom(path, data);
+      compile_into_dom(path, data, function() {
+        // reset mathjax equation counter
+        MathJax.Extension["TeX/AMSmath"].startNumber = 0;
+        MathJax.Extension["TeX/AMSmath"].labels = {};
+
+        // rerender mathjax
+        var content = document.getElementById("content");
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
+
+      });
     }).fail(function() {
       show_error("Opps! ... File not found!");
       stop_loading();
-    })
+    });
   }
 
-  function escape_html(string, encode) {
+  function escape_html(string) {
     return string
-			.replace(/\\/g, "&#92;")
-			.replace(/\_/g, "&#95;");
+      .replace(/\\/g, "&#92;")
+      .replace(/\_/g, "&#95;");
   }
 
-  function unescape_html(string, encode) {
+  function unescape_html(string) {
     return string
-			.replace(/&amp;#92;/g, "\\")
-			.replace(/&amp;#95;/g, "_");
+      .replace(/&amp;#92;/g, "\\")
+      .replace(/&amp;#95;/g, "_");
   }
 
-  function compile_into_dom(path, data) {
+  function compile_into_dom(path, data, cb) {
     hide_errors();
 
     data = marked(escape_html(data));
@@ -383,27 +392,25 @@ $(function($) {
 
     stop_loading();
     escape_github_badges(data);
+
     normalize_paths();
     create_page_anchors();
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
     if (ditto.highlight_code) {
       $('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
       });
     }
+
+    if (cb) {
+      cb(data);
+    }
   }
 
   function router() {
     var hash = location.hash;
 
-    if (hash.slice(1, 8) == "mjx-eqn") {
-      // $("html, body").delay(2000).animate({
-      //   scrollTop: $(hash).offset().top },
-      //   2000
-      // );
-
-    } else if (hash.slice(1, 7) !== "search" ) {
+    if (hash.slice(1, 7) !== "search") {
       page_getter();
 
     } else {
