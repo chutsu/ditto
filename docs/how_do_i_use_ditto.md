@@ -110,6 +110,7 @@ If you want the GitHub search bar enter the following in the same file:
     [ditto:searchbar]
 
 **IMPORTANT NOTE**:
+- **This will only search markdown files in your repo's master branch.**
 - Add `#` infront of `docs`, where `docs` is the folder where `document_1.md` resides
 - Also ___DO NOT___ INCLUDE THE FILE EXTENSION AT THE END!
 
