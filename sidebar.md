@@ -1,5 +1,5 @@
 # [ditto]()
-version 0.12
+version 0.13
 
 - [Github Repository](http://github.com/chutsu/ditto/)
 
