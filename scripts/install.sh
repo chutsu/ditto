@@ -48,7 +48,7 @@ print_instructions() {
     echo "";
     echo "  python -m SimpleHTTPServer";
     echo "";
-    echo "when you run the server, go visit 'localhost:8080' with your browser.";
+    echo "when you run the server, go visit 'localhost:8000' with your browser.";
     echo "For more information visit: http://chutsu.github.io/ditto/";
     echo "";
     echo "";
