@@ -374,14 +374,14 @@ $(function($) {
 
   function escape_html(string) {
     return string
-      .replace(/\\/g, "&#92;")
-      .replace(/\_/g, "&#95;");
+      .replace(/\\/g, "&#92;");
+      // .replace(/\_/g, "&#95;");
   }
 
   function unescape_html(string) {
     return string
-      .replace(/&amp;#92;/g, "\\")
-      .replace(/&amp;#95;/g, "_");
+      .replace(/&amp;#92;/g, "\\");
+      // .replace(/&amp;#95;/g, "_");
   }
 
   function compile_into_dom(path, data, cb) {
