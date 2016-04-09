@@ -270,7 +270,7 @@ $(function($) {
   function normalize_paths() {
     // images
     ditto.content_id.find("img").map(function() {
-      var src = $(this).attr("src").replace("./", "");
+      var src = $(this).attr("src").replace(/^\.\//, "");
       if ($(this).attr("src").slice(0, 5) !== "http") {
         var url = location.hash.replace("#", "");
 
