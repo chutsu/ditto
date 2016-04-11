@@ -270,7 +270,9 @@ $(function($) {
   function normalize_paths() {
     // images
     ditto.content_id.find("img").map(function() {
-      var src = $(this).attr("src").replace(/^\.\//, "");
+      var src = $(this).attr("src");
+      src = src && src.trim().replace(/^\.\//, "") || "";
+
       if ($(this).attr("src").slice(0, 5) !== "http") {
         var url = location.hash.replace("#", "");
 
@@ -279,7 +281,7 @@ $(function($) {
         var base_dir = url.slice(0, url.length - 1).join("/");
 
         // normalize the path (i.e. make it absolute)
-        if (base_dir) {
+        if (base_dir && !src.startsWith("http://") && !src.startsWith("https://")) {
           $(this).attr("src", base_dir + "/" + src);
         } else {
           $(this).attr("src", src);
