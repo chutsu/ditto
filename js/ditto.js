@@ -358,6 +358,10 @@ $(function($) {
     show_loading();
     $.get(path, function(data) {
       compile_into_dom(path, data, function() {
+        if (!window.MathJax) {
+          return ;
+        }
+
         // reset mathjax equation counter
         if (MathJax.Extension["Tex/AMSmath"]) {
           MathJax.Extension["TeX/AMSmath"].startNumber = 0;
