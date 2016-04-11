@@ -357,23 +357,14 @@ $(function($) {
     $.get(path, function(data) {
       compile_into_dom(path, data, function() {
         // reset mathjax equation counter
-<<<<<<< HEAD
-        MathJax.Extension["TeX/AMSmath"].startNumber = 0;
-        MathJax.Extension["TeX/AMSmath"].labels = {};
-=======
         if (MathJax.Extension["Tex/AMSmath"]) {
           MathJax.Extension["TeX/AMSmath"].startNumber = 0;
           MathJax.Extension["TeX/AMSmath"].labels = {};
         }
->>>>>>> master
 
         // rerender mathjax
         var content = document.getElementById("content");
         MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
-<<<<<<< HEAD
-
-=======
->>>>>>> master
       });
     }).fail(function() {
       show_error("Opps! ... File not found!");
