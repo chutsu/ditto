@@ -43,10 +43,7 @@ This is an inline equation $f = ma$. The following are display maths:
 
 \begin{equation}
 	\mathbf{I}_n = \left.\left(
-					\vphantom{
-					\begin{array}{c}
-						1 \\ 1 \\ 1 \\ 1 \\ 1 \end{array}
-					}
+					\vphantom{\begin{array}{c} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{array}}
 					\smash{\underbrace{
 						\begin{array}{ccccc}
 								1 & 0 & 0 & \cdots & 0 \\
