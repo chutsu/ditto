@@ -19,9 +19,9 @@ whilst using a python tool called [LiveReload][livereload]. The tool
 automatically refreshes the page you are editing, giving you a dreamweaver like
 live-preview of the doc you are editing.
 
-  pip install livereload
-  cd <your repo> livereload
-  # serving on 127.0.0.1:35729 ...
+    pip install livereload
+    cd <your repo> livereload
+    # serving on 127.0.0.1:35729 ...
 
 If you run livereload at the root of your repo, it detects any file changes
 and automatically refreshes the page. What I normally do is have browser and
