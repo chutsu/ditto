@@ -7,8 +7,6 @@ This is an inline equation $f = ma$. The following are display maths:
     x = \alpha + \beta
 \end{equation}
 
-asdlfkjsldf
-
 \begin{equation}
     \mathbf{V}_{1} \times \mathbf{V}_{2} =
     \begin{vmatrix}
