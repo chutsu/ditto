@@ -317,6 +317,7 @@ $(function($) {
   function escape_github_badges(data) {
     $("img").map(function() {
       var ignore_list = [
+        "travis-ci.com",
         "travis-ci.org",
         "coveralls.io"
       ];
@@ -356,15 +357,14 @@ $(function($) {
     show_loading();
     $.get(path, function(data) {
       compile_into_dom(path, data, function() {
-        // reset mathjax equation counter
-        if (MathJax.Extension["Tex/AMSmath"]) {
+        // rerender mathjax and reset mathjax equation counter
+        if (MathJax) {
           MathJax.Extension["TeX/AMSmath"].startNumber = 0;
           MathJax.Extension["TeX/AMSmath"].labels = {};
-        }
 
-        // rerender mathjax
-        var content = document.getElementById("content");
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
+          var content = document.getElementById("content");
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
+        }
       });
     }).fail(function() {
       show_error("Opps! ... File not found!");

@@ -16,7 +16,6 @@
 
     <!-- MATHJAX -->
     <script type="text/x-mathjax-config">
-      jax: ["input/TeX", "output/HTML-CSS"],
       MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [['$','$']],
@@ -25,7 +24,7 @@
         TeX: {
           equationNumbers: {
             autoNumber: "all",
-            formatID: function(id) { return null },
+            formatID: function(id) { return "(" + id  + ")"},
             formatURL: function(id) { return null }
           }
         }

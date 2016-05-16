@@ -7,13 +7,15 @@ This is an inline equation $f = ma$. The following are display maths:
     x = \alpha + \beta
 \end{equation}
 
+asdlfkjsldf
+
 \begin{equation}
     \mathbf{V}_{1} \times \mathbf{V}_{2} =
-        \begin{vmatrix}
-            \mathbf{i} & \mathbf{j} & \mathbf{k} \\
-            \frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\
-            \frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \\
-        \end{vmatrix}
+    \begin{vmatrix}
+        \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+        \frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\
+        \frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \\
+    \end{vmatrix}
 \end{equation}
 
 
@@ -42,8 +44,10 @@ This is an inline equation $f = ma$. The following are display maths:
 \end{equation}
 
 \begin{equation}
-	\mathbf{I}_n = \left.\left(
-					\vphantom{\begin{array}{c} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{array}}
+	\mathbf{I}_n = \left . \left(
+					\vphantom{
+					    \begin{array}{c} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{array}
+					}
 					\smash{\underbrace{
 						\begin{array}{ccccc}
 								1 & 0 & 0 & \cdots & 0 \\
