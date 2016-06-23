@@ -36,11 +36,11 @@ snippet and save it as `index.html`
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
         <!-- MARKED -->
-        <script src="//chutsu.github.io/ditto/ver/VER/marked.js"></script>
+        <script src="//chutsu.github.io/ditto/ver/latest/marked.js"></script>
 
         <!-- HIGHLIGHT.JS -->
-        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/VER/github.css">
-        <script src="//chutsu.github.io/ditto/ver/VER/highlight.js"></script>
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/github.css">
+        <script src="//chutsu.github.io/ditto/ver/latest/highlight.js"></script>
 
         <!-- MATHJAX -->
         <script type="text/x-mathjax-config">
@@ -64,8 +64,8 @@ snippet and save it as `index.html`
         </script>
 
         <!-- DITTO CSS -->
-        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/VER/ditto.css">
-        <script src="//chutsu.github.io/ditto/ver/VER/ditto.js"></script>
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/ditto.css">
+        <script src="//chutsu.github.io/ditto/ver/latest/ditto.js"></script>
     </head>
     <body>
         <!-- ESSENTIAL -->
