@@ -26,26 +26,46 @@ host your files.
 [Download][index_file](<- right-click "Save as") or copy the following code
 snippet and save it as `index.html`
 
-
     <!DOCTYPE html>
     <html>
     <head>
         <title>TITLE</title>  <!-- EDIT ME!! -->
 
         <!-- JQUERY -->
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
         <!-- MARKED -->
-        <script src="//chutsu.github.io/ditto/ver/latest/marked.js"></script>
+        <script src="//chutsu.github.io/ditto/ver/VER/marked.js"></script>
 
         <!-- HIGHLIGHT.JS -->
-        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/github.css">
-        <script src="//chutsu.github.io/ditto/ver/latest/highlight.js"></script>
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/VER/github.css">
+        <script src="//chutsu.github.io/ditto/ver/VER/highlight.js"></script>
+
+        <!-- MATHJAX -->
+        <script type="text/x-mathjax-config">
+        jax: ["input/TeX", "output/HTML-CSS"],
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$']],
+                processRefs: true
+            },
+            TeX: {
+                equationNumbers: {
+                    autoNumber: "all",
+                    formatID: function(id) { return null },
+                    formatURL: function(id) { return null }
+                }
+            }
+        });
+        </script>
+        <script type="text/javascript"
+            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+        </script>
 
         <!-- DITTO CSS -->
-        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/ditto.css">
-        <script src="//chutsu.github.io/ditto/ver/latest/js/ditto.js"></script>
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/VER/ditto.css">
+        <script src="//chutsu.github.io/ditto/ver/VER/ditto.js"></script>
     </head>
     <body>
         <!-- ESSENTIAL -->
@@ -62,26 +82,25 @@ snippet and save it as `index.html`
         <!-- DITTO -->
         <script>
             $(function($) {
-                // essential settings
-                ditto.index = "README.md",
-                ditto.sidebar_file = "sidebar.md",
+            // essential settings
+            ditto.index = "README.md",
+            ditto.sidebar_file = "sidebar.md",
 
-                // optional settings if you want github search
-                ditto.github_username = null;   // <------- EDIT ME!!
-                ditto.github_repo = null;       // <------- EDIT ME!!
-                ditto.highlight_code = false;    // <------- EDIT ME!!
+            // optional settings if you want github search
+            ditto.github_username = null;   // <------- EDIT ME!!
+            ditto.github_repo = null;       // <------- EDIT ME!!
+            ditto.highlight_code = false;    // <------- EDIT ME!!
 
-                // where the docs are actually stored on github - so you can edit
-                // e.g. https://github.com/chutsu/ditto/edit/gh-pages
-                ditto.base_url = "";            // <------- EDIT ME!!
+            // where the docs are actually stored on github - so you can edit
+            // e.g. https://github.com/chutsu/ditto/edit/gh-pages
+            ditto.base_url = "";            // <------- EDIT ME!!
 
-                // run
-                ditto.run();
+            // run
+            ditto.run();
             });
         </script>
     </body>
     </html>
-
 
 Edit:
 - `ditto.index`
