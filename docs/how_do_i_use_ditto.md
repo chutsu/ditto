@@ -44,8 +44,6 @@ snippet and save it as `index.html`
 
         <!-- MATHJAX -->
         <script type="text/x-mathjax-config">
-        {
-            jax: ["input/TeX", "output/HTML-CSS"],
             MathJax.Hub.Config({
                 tex2jax: {
                     inlineMath: [['$','$']],
