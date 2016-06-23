@@ -55,8 +55,8 @@ snippet and save it as `index.html`
                         formatID: function(id) { return null },
                         formatURL: function(id) { return null }
                     }
-            }
-        });
+                }
+            });
         </script>
         <script type="text/javascript"
             src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
@@ -134,11 +134,5 @@ If you want the GitHub search bar enter the following in the same file:
 
 ## README.md
 Do I really have to tell you what to put in here?
-
-    sfsdasdfasdf asdflasdf_asdfsd asdflsdf asdflkasdf
-    sfsdasdfasdf asdflasdf_asdfsd asdflsdf asdflkasdf
-    sfsdasdfasdf asdflasdf_asdfsd asdflsdf asdflkasdf
-
-
 
 [index_file]: http://raw.githubusercontent.com/chutsu/ditto/master/ver/latest/index.html
