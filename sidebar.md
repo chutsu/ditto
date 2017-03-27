@@ -11,6 +11,7 @@ version 0.13
 - [Why use ditto?](#docs/why_use_ditto)
 - [How do I run ditto locally?](#docs/how_do_i_run_ditto_locally)
 - [How I write equations in ditto?](#docs/maths_demo)
+- [Features](#docs/features)
 
 ## Projects that use ditto
 - [playground](http://chutsu.github.io/playground)

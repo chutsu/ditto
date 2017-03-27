@@ -318,6 +318,9 @@ input[type=search] {
     margin-bottom: 0;
 }
 
+#content .youtube_video {
+  margin-top: 20px;
+}
 
 #hide {
     display: none;

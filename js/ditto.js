@@ -267,6 +267,43 @@ $(function($) {
     }
   }
 
+  function youtube_url_extract(data) {
+    var yt_regex = /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+/g;
+    var yt_url = String(data.match(yt_regex));
+    yt_url = yt_url.replace(/]/g, "");
+    return yt_url;
+  }
+
+  function youtube_url_to_embed(data) {
+    return data = data.replace(/watch\?v\=/g, "embed/");
+  }
+
+  function create_youtube_embeds(data) {
+    // replaces [ditto:youtube:<some youtube link>]
+    // with a proper youtube embed iframe
+    var token_regex = /\[ditto\:youtube:(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+\]/g;
+    var yt_url = youtube_url_extract(data);
+    var yt_embed_url = youtube_url_to_embed(yt_url);
+
+    // youtube embed html
+    var embed_html = `<div class="youtube_video">
+      <div style="position:relative;height:0;padding-bottom:56.25%">
+        <iframe src="<link>?ecver=2"
+          width="640"
+          height="360"
+          frameborder="0"
+          style="position:absolute;width:100%;height:100%;left:0"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>`;
+    embed_html = embed_html.replace("<link>", yt_embed_url);
+
+    // replace match code with youtube video
+    data = data.replace(token_regex, embed_html);
+    return data;
+  }
+
   function normalize_paths() {
     // images
     ditto.content_id.find("img").map(function() {
@@ -387,6 +424,7 @@ $(function($) {
   function compile_into_dom(path, data, cb) {
     hide_errors();
 
+    data = create_youtube_embeds(data);
     data = marked(escape_html(data));
     data = unescape_html(data);
     ditto.content_id.html(data);
