@@ -395,7 +395,7 @@ $(function($) {
     $.get(path, function(data) {
       compile_into_dom(path, data, function() {
         // rerender mathjax and reset mathjax equation counter
-        if (MathJax) {
+        if (MathJax && MathJax.Extension["Tex/AMSmath"]) {
           MathJax.Extension["TeX/AMSmath"].startNumber = 0;
           MathJax.Extension["TeX/AMSmath"].labels = {};
 
