@@ -395,9 +395,11 @@ $(function($) {
     $.get(path, function(data) {
       compile_into_dom(path, data, function() {
         // rerender mathjax and reset mathjax equation counter
-        if (MathJax && MathJax.Extension["Tex/AMSmath"]) {
-          MathJax.Extension["TeX/AMSmath"].startNumber = 0;
-          MathJax.Extension["TeX/AMSmath"].labels = {};
+        if (MathJax) {
+          if (MathJax.Extension["Tex/AMSmath"]) {
+            MathJax.Extension["TeX/AMSmath"].startNumber = 0;
+            MathJax.Extension["TeX/AMSmath"].labels = {};
+          }
 
           var content = document.getElementById("content");
           MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
