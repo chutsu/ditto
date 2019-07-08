@@ -69,4 +69,4 @@ relevant section, with the relevant section glowing red for a moment to attract
 attention.
 
 
-[marked_github]: https://github.com/chjj/marked
+[marked_github]: https://github.com/markedjs/marked
